@@ -1,0 +1,2042 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Industry Engine Styleguide</title>
+        <style>
+            @font-face {
+                font-family: "Rubik-Numbers";
+                src: url("/fonts/Rubik-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Rubik-Numbers";
+                src: url("/fonts/Rubik-Medium.ttf") format("truetype");
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Poppins";
+                src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Poppins";
+                src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Poppins";
+                src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            :root {
+                color-scheme: light;
+
+                /* Brand base */
+                --brand-pink: #d10956;
+                --brand-cyan: #02b1d0;
+                --brand-navy: #0d062a;
+
+                /* Shared scales */
+                --pink-50: #fef2f7;
+                --pink-100: #fde7f1;
+                --pink-200: #fccfe3;
+                --pink-300: #fa9fc9;
+                --pink-400: #f765a8;
+                --pink-500: #d10956;
+                --pink-600: #b80748;
+                --pink-700: #9a063d;
+                --pink-800: #800636;
+                --pink-900: #6d0831;
+                --pink-950: #4a0522;
+
+                --cyan-50: #e6f9fd;
+                --cyan-100: #cef3fb;
+                --cyan-200: #9de8f7;
+                --cyan-300: #6bdcf3;
+                --cyan-400: #34c7e8;
+                --cyan-500: #02b1d0;
+                --cyan-600: #028eb3;
+                --cyan-700: #026b8a;
+                --cyan-800: #01566d;
+                --cyan-900: #01475b;
+                --cyan-950: #003344;
+
+                --green-50: #f0fdf4;
+                --green-100: #d1f7dd;
+                --green-200: #a3efbb;
+                --green-300: #6dd896;
+                --green-400: #4ac57f;
+                --green-500: #43b772;
+                --green-600: #36955e;
+                --green-700: #2a7449;
+                --green-800: #1f5c39;
+                --green-900: #184b2e;
+                --green-950: #0f3420;
+
+                --navy-50: #f8f8fc;
+                --navy-100: #f2f2f8;
+                --navy-200: #e4e4ed;
+                --navy-300: #cfcfde;
+                --navy-400: #9898b0;
+                --navy-500: #6e6e8a;
+                --navy-600: #50506a;
+                --navy-700: #3b3b54;
+                --navy-750: #313148;
+                --navy-800: #26263d;
+                --navy-900: #151529;
+                --navy-950: #0d062a;
+
+                --neutral-50: #fafafb;
+                --neutral-100: #f5f5f7;
+                --neutral-200: #ededf0;
+                --neutral-300: #e3e3e8;
+                --neutral-400: #c7c6cf;
+                --neutral-500: #aaa9b5;
+                --neutral-600: #8e8d9b;
+                --neutral-700: #737281;
+                --neutral-800: #5a5968;
+                --neutral-900: #434251;
+                --neutral-950: #2b2a36;
+
+                /* Product accents */
+                --stat-results: #04b7db;
+                --stat-positive: #60d394;
+                --stat-negative: #dd2d4a;
+                --stat-overrides: #3d3855;
+
+                --class-sic: #02b1d0;
+                --class-rsic: #34c7e8;
+                --class-rtic: #028eb3;
+                --class-cic: #f59e0b;
+
+                /* Light semantic tokens */
+                --bg-base: #f8f8fc;
+                --bg-elevated: #f2f2f8;
+                --bg-surface: #e4e4ed;
+                --bg-surface-hover: #cfcfde;
+                --bg-surface-strong: #9898b0;
+                --bg-input: #e4e4ed;
+                --bg-inset: #e4e4ed;
+
+                --text-primary: #0d062a;
+                --text-secondary: #3b3b54;
+                --text-muted: #6e6e8a;
+                --text-inverse: #ffffff;
+
+                --border-default: #e4e4ed;
+                --border-subtle: #f2f2f8;
+                --border-strong: #cfcfde;
+                --border-focus: #0d062a;
+
+                --bg-selected: #f2f2f8;
+                --bg-selected-strong: #e4e4ed;
+                --border-selected: #3b3b54;
+
+                --bg-success: #f0fdf4;
+                --text-success: #166534;
+                --border-success: #22c55e;
+
+                --bg-warning: #fffbeb;
+                --text-warning: #92400e;
+                --border-warning: #f59e0b;
+
+                --bg-error: #fef2f2;
+                --text-error: #991b1b;
+                --border-error: #ef4444;
+
+                --bg-info: #e6f9fd;
+                --text-info: #026b8a;
+                --border-info: #02b1d0;
+
+                --text-link: #026b8a;
+                --text-link-hover: #01566d;
+                --text-link-visited: #6e4b8a;
+
+                --bg-disabled: #f2f2f8;
+                --text-disabled: #9898b0;
+                --border-disabled: #e4e4ed;
+
+                --shadow-card: 0 2px 10px rgba(13, 6, 42, 0.08);
+                --shadow-flyout: 0 16px 40px rgba(13, 6, 42, 0.18);
+
+                --radius-sm: 6px;
+                --radius-md: 8px;
+                --radius-lg: 12px;
+                --radius-xl: 16px;
+                --radius-pill: 9999px;
+
+                --space-1: 4px;
+                --space-2: 8px;
+                --space-3: 12px;
+                --space-4: 16px;
+                --space-5: 20px;
+                --space-6: 24px;
+                --space-8: 32px;
+
+                --duration-fast: 150ms;
+                --duration-normal: 200ms;
+                --duration-slow: 300ms;
+                --easing-standard: ease;
+
+                --font-sans:
+                    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, Helvetica, Arial, sans-serif;
+                --font-number: "Rubik-Numbers", "Poppins", monospace;
+            }
+
+            [data-theme="dark"] {
+                color-scheme: dark;
+
+                --bg-base: #0d062a;
+                --bg-elevated: #26263d;
+                --bg-surface: #313148;
+                --bg-surface-hover: #3b3b54;
+                --bg-surface-strong: #50506a;
+                --bg-input: #151529;
+                --bg-inset: #151529;
+
+                --text-primary: #ffffff;
+                --text-secondary: #e4e4ed;
+                --text-muted: #cfcfde;
+                --text-inverse: #0d062a;
+
+                --border-default: #3b3b54;
+                --border-subtle: #26263d;
+                --border-strong: #50506a;
+                --border-focus: #ffffff;
+
+                --bg-selected: rgba(209, 9, 86, 0.15);
+                --bg-selected-strong: rgba(209, 9, 86, 0.25);
+                --border-selected: #f765a8;
+
+                --bg-success: rgba(34, 197, 94, 0.15);
+                --text-success: #86efac;
+                --border-success: #22c55e;
+
+                --bg-warning: rgba(245, 158, 11, 0.15);
+                --text-warning: #fcd34d;
+                --border-warning: #f59e0b;
+
+                --bg-error: rgba(239, 68, 68, 0.15);
+                --text-error: #fca5a5;
+                --border-error: #ef4444;
+
+                --bg-info: rgba(2, 177, 208, 0.15);
+                --text-info: #6bdcf3;
+                --border-info: #02b1d0;
+
+                --text-link: #34c7e8;
+                --text-link-hover: #6bdcf3;
+                --text-link-visited: #b794d6;
+
+                --bg-disabled: #26263d;
+                --text-disabled: #6e6e8a;
+                --border-disabled: #3b3b54;
+
+                --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.35);
+                --shadow-flyout: 0 20px 48px rgba(0, 0, 0, 0.45);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: var(--bg-base);
+                color: var(--text-primary);
+                font-family: var(--font-sans);
+                line-height: 1.45;
+            }
+
+            a {
+                color: var(--text-link);
+                text-decoration: none;
+                transition: color var(--duration-fast) var(--easing-standard);
+            }
+
+            a:hover {
+                color: var(--text-link-hover);
+                text-decoration: underline;
+            }
+
+            .page {
+                width: min(1400px, calc(100% - 48px));
+                margin: 24px auto 40px;
+            }
+
+            .topbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: var(--space-4);
+                background: var(--bg-elevated);
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-xl);
+                padding: var(--space-6);
+                box-shadow: var(--shadow-card);
+                position: sticky;
+                top: 16px;
+                z-index: 10;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: var(--space-4);
+                min-width: 0;
+            }
+
+            .brand-accent {
+                width: 12px;
+                height: 54px;
+                border-radius: var(--radius-pill);
+                background: linear-gradient(
+                    180deg,
+                    var(--brand-cyan),
+                    var(--brand-pink)
+                );
+                flex-shrink: 0;
+            }
+
+            .brand h1 {
+                margin: 0;
+                font-size: 30px;
+                line-height: 1.1;
+            }
+
+            .brand p {
+                margin: 6px 0 0;
+                color: var(--text-secondary);
+                font-size: 14px;
+            }
+
+            .toggle {
+                border: 0;
+                background: var(--bg-surface);
+                color: var(--text-primary);
+                border-radius: var(--radius-pill);
+                height: 40px;
+                padding: 0 14px;
+                font-family: var(--font-sans);
+                font-weight: 600;
+                cursor: pointer;
+                transition: background var(--duration-fast)
+                    var(--easing-standard);
+            }
+
+            .toggle:hover {
+                background: var(--bg-surface-hover);
+            }
+
+            .intro {
+                margin-top: var(--space-6);
+                padding: var(--space-6);
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-xl);
+                background: var(--bg-elevated);
+            }
+
+            .intro h2 {
+                margin: 0 0 var(--space-2);
+                font-size: 22px;
+            }
+
+            .intro p {
+                margin: 0;
+                color: var(--text-secondary);
+                max-width: 100ch;
+            }
+
+            .grid {
+                display: grid;
+                gap: var(--space-6);
+                margin-top: var(--space-6);
+            }
+
+            .grid.cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .panel {
+                background: var(--bg-elevated);
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-xl);
+                box-shadow: var(--shadow-card);
+                padding: var(--space-6);
+            }
+
+            .section-gap {
+                margin-top: var(--space-6);
+            }
+
+            .panel h3 {
+                margin: 0 0 4px;
+                font-size: 20px;
+            }
+
+            .panel .sub {
+                margin: 0 0 var(--space-4);
+                color: var(--text-secondary);
+                font-size: 14px;
+            }
+
+            .swatch-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+                gap: var(--space-3);
+            }
+
+            .swatch {
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-md);
+                overflow: hidden;
+                background: var(--bg-base);
+            }
+
+            .chip {
+                height: 48px;
+                border-bottom: 1px solid var(--border-default);
+            }
+
+            .swatch .meta {
+                padding: 8px 10px 9px;
+            }
+
+            .swatch .token {
+                font-size: 12px;
+                color: var(--text-secondary);
+                margin: 0 0 2px;
+                font-weight: 600;
+            }
+
+            .swatch .hex {
+                margin: 0;
+                font-size: 12px;
+                font-family: var(--font-number);
+                color: var(--text-muted);
+            }
+
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-md);
+                overflow: hidden;
+            }
+
+            .table th,
+            .table td {
+                text-align: left;
+                vertical-align: top;
+                padding: 11px 12px;
+                border-bottom: 1px solid var(--border-default);
+                font-size: 13px;
+            }
+
+            .table th {
+                background: var(--bg-surface);
+                color: var(--text-secondary);
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 700;
+                font-size: 11px;
+            }
+
+            .table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .token-box {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                border-radius: var(--radius-sm);
+                border: 1px solid var(--border-default);
+                padding: 4px 8px;
+                background: var(--bg-base);
+                white-space: nowrap;
+                font-family: var(--font-number);
+                font-size: 12px;
+            }
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 999px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                flex-shrink: 0;
+            }
+
+            .component-wrap {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: var(--space-6);
+            }
+
+            .demo {
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-lg);
+                background: var(--bg-base);
+                padding: var(--space-4);
+            }
+
+            .demo h4 {
+                margin: 0 0 10px;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: var(--text-secondary);
+            }
+
+            .stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .btn {
+                height: 50px;
+                padding: 0 16px;
+                border: 0;
+                border-radius: var(--radius-md);
+                font-family: var(--font-sans);
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    color var(--duration-fast) var(--easing-standard),
+                    opacity var(--duration-fast) var(--easing-standard);
+            }
+
+            .btn:focus-visible,
+            .input:focus-visible,
+            .tab:focus-visible,
+            .icon-btn:focus-visible,
+            .page-btn:focus-visible {
+                outline: none;
+                box-shadow: 0 0 0 2px var(--border-focus);
+            }
+
+            .btn.primary {
+                background: var(--pink-500);
+                color: #fff;
+            }
+
+            .btn.primary:hover {
+                background: var(--pink-600);
+            }
+
+            .btn.neutral {
+                background: var(--navy-200);
+                color: var(--navy-950);
+            }
+
+            .btn.neutral:hover {
+                background: var(--navy-300);
+            }
+
+            .btn.success {
+                background: var(--green-500);
+                color: #fff;
+            }
+
+            .btn.success:hover {
+                background: var(--green-600);
+            }
+
+            .btn.warning {
+                background: #f59e0b;
+                color: #fff;
+            }
+
+            .btn.warning:hover {
+                background: #d97706;
+            }
+
+            .btn.danger {
+                background: #dc2626;
+                color: #fff;
+            }
+
+            .btn.danger:hover {
+                background: #b91c1c;
+            }
+
+            .btn:disabled {
+                background: var(--bg-disabled);
+                color: var(--text-disabled);
+                cursor: not-allowed;
+            }
+
+            [data-theme="dark"] .btn.neutral {
+                background: var(--navy-900);
+                color: var(--navy-100);
+            }
+
+            [data-theme="dark"] .btn.neutral:hover {
+                background: var(--navy-500);
+            }
+
+            .input {
+                height: 50px;
+                width: 100%;
+                border: 1px solid transparent;
+                border-radius: var(--radius-md);
+                background: var(--bg-input);
+                color: var(--text-primary);
+                font-family: var(--font-sans);
+                font-size: 14px;
+                padding: 0 14px;
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    border-color var(--duration-fast) var(--easing-standard);
+            }
+
+            .input::placeholder {
+                color: var(--text-muted);
+            }
+
+            .input:hover {
+                background: var(--bg-surface-hover);
+            }
+
+            .input.disabled {
+                background: var(--bg-disabled);
+                color: var(--text-disabled);
+                border-color: var(--border-disabled);
+            }
+
+            .search-field {
+                position: relative;
+                width: 100%;
+            }
+
+            .search-field .input {
+                padding-left: 54px;
+            }
+
+            .search-field .search-icon {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 24px;
+                height: 24px;
+                color: var(--text-muted);
+                pointer-events: none;
+            }
+
+            .tab-rail {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                background: var(--navy-300);
+                border-radius: var(--radius-lg);
+                padding: 6px;
+            }
+
+            .tab {
+                border: 0;
+                height: 36px;
+                border-radius: var(--radius-md);
+                padding: 0 14px;
+                background: transparent;
+                color: var(--text-secondary);
+                font-family: var(--font-sans);
+                font-weight: 700;
+                font-size: 14px;
+            }
+
+            .tab.active {
+                background: #fff;
+                color: var(--text-primary);
+                border: 1px solid var(--border-default);
+            }
+
+            [data-theme="dark"] .tab-rail {
+                background: var(--navy-700);
+            }
+
+            [data-theme="dark"] .tab.active {
+                background: var(--navy-800);
+                color: #fff;
+                border-color: var(--border-default);
+            }
+
+            .stat-row {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .stat {
+                border-radius: var(--radius-xl);
+                background: var(--bg-elevated);
+                border: 1px solid var(--border-default);
+                padding: 14px;
+            }
+
+            .stat .label {
+                margin: 0;
+                color: var(--text-muted);
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .stat .value {
+                margin: 10px 0 0;
+                font-size: 38px;
+                line-height: 1;
+                font-family: var(--font-number);
+                color: var(--text-primary);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .stat .accent {
+                width: 10px;
+                height: 36px;
+                border-radius: var(--radius-pill);
+                display: inline-block;
+            }
+
+            .accent.results {
+                background: var(--stat-results);
+            }
+            .accent.positive {
+                background: var(--stat-positive);
+            }
+            .accent.negative {
+                background: var(--stat-negative);
+            }
+            .accent.overrides {
+                background: var(--stat-overrides);
+            }
+
+            .mini-table {
+                width: 100%;
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                background: var(--bg-elevated);
+            }
+
+            .mini-head {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 10px;
+                background: var(--navy-300);
+                color: var(--navy-700);
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                padding: 10px 12px;
+            }
+
+            .mini-row {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 10px;
+                padding: 12px;
+                align-items: center;
+                border-top: 1px solid var(--border-default);
+                background: var(--bg-elevated);
+                transition: background var(--duration-fast)
+                    var(--easing-standard);
+            }
+
+            .mini-row:hover {
+                background: var(--bg-surface-hover);
+            }
+
+            [data-theme="dark"] .mini-head {
+                background: var(--navy-600);
+                color: var(--navy-100);
+            }
+
+            .score {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-family: var(--font-number);
+            }
+
+            .track {
+                width: 44px;
+                height: 6px;
+                border-radius: var(--radius-pill);
+                background: var(--navy-200);
+                overflow: hidden;
+            }
+
+            .fill {
+                height: 100%;
+                border-radius: var(--radius-pill);
+            }
+
+            [data-theme="dark"] .track {
+                background: var(--navy-700);
+            }
+
+            .icon-btn {
+                min-width: 64px;
+                height: 40px;
+                padding: 0 12px;
+                border: 0;
+                border-radius: var(--radius-md);
+                background: #fff;
+                color: var(--navy-600);
+                font-size: 13px;
+                font-weight: 700;
+                cursor: pointer;
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    color var(--duration-fast) var(--easing-standard);
+            }
+
+            .icon-btn:hover.like {
+                background: var(--stat-positive);
+                color: #fff;
+            }
+            .icon-btn:hover.dislike {
+                background: var(--stat-negative);
+                color: #fff;
+            }
+
+            [data-theme="dark"] .icon-btn {
+                background: var(--navy-900);
+                color: var(--navy-200);
+            }
+
+            .pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                border-radius: var(--radius-pill);
+                padding: 4px 10px;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+
+            .pill.sic {
+                background: var(--cyan-100);
+                color: var(--cyan-800);
+            }
+            .pill.rsic {
+                background: var(--cyan-200);
+                color: var(--cyan-800);
+            }
+            .pill.rtic {
+                background: var(--cyan-300);
+                color: var(--cyan-900);
+            }
+            .pill.cic {
+                background: #e9d5ff;
+                color: #6b21a8;
+            }
+
+            [data-theme="dark"] .pill.sic {
+                background: var(--cyan-900);
+                color: var(--cyan-100);
+            }
+            [data-theme="dark"] .pill.rsic {
+                background: var(--cyan-800);
+                color: var(--cyan-100);
+            }
+            [data-theme="dark"] .pill.rtic {
+                background: var(--cyan-700);
+                color: var(--cyan-100);
+            }
+            [data-theme="dark"] .pill.cic {
+                background: #6b21a8;
+                color: #f3e8ff;
+            }
+
+            .side-preview {
+                width: 100%;
+                max-width: 290px;
+                background: var(--bg-elevated);
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-xl);
+                overflow: hidden;
+            }
+
+            .side-head {
+                padding: 12px;
+                border-bottom: 1px solid var(--border-default);
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .side-head .dot {
+                width: 12px;
+                height: 34px;
+                border-radius: 999px;
+                border: 0;
+                background: linear-gradient(
+                    180deg,
+                    var(--brand-cyan),
+                    var(--brand-pink)
+                );
+            }
+
+            .side-head strong {
+                font-size: 15px;
+            }
+
+            .side-list {
+                list-style: none;
+                margin: 0;
+                padding: 10px;
+                display: grid;
+                gap: 4px;
+            }
+
+            .side-item {
+                border-radius: 10px;
+                padding: 10px 12px;
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--text-secondary);
+                background: transparent;
+            }
+
+            .side-item.active {
+                background: var(--navy-700);
+                color: #fff;
+            }
+
+            .side-item:hover {
+                background: var(--bg-surface-hover);
+                color: var(--text-primary);
+            }
+
+            .side-item.active:hover {
+                background: var(--navy-700);
+                color: #fff;
+            }
+
+            [data-theme="dark"] .side-item.active {
+                background: var(--navy-600);
+            }
+
+            .pagination {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                flex-wrap: wrap;
+            }
+
+            .page-btn {
+                height: 40px;
+                min-width: 40px;
+                border: 0;
+                border-radius: var(--radius-md);
+                padding: 0 10px;
+                background: var(--navy-200);
+                color: var(--navy-950);
+                font-family: var(--font-number);
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    color var(--duration-fast) var(--easing-standard);
+            }
+
+            .page-btn:hover {
+                background: var(--navy-300);
+            }
+
+            .page-btn.active {
+                background: var(--navy-700);
+                color: #fff;
+            }
+
+            [data-theme="dark"] .page-btn {
+                background: var(--navy-900);
+                color: var(--navy-100);
+            }
+
+            [data-theme="dark"] .page-btn:hover {
+                background: var(--navy-500);
+            }
+
+            [data-theme="dark"] .page-btn.active {
+                background: var(--navy-600);
+                color: #fff;
+            }
+
+            .code {
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-lg);
+                background: var(--bg-base);
+                padding: 14px;
+                margin: 0;
+                overflow: auto;
+                font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", monospace;
+                font-size: 12px;
+                line-height: 1.45;
+                color: var(--text-secondary);
+            }
+
+            .kpi {
+                margin: 0;
+                font-family: var(--font-number);
+                font-size: 32px;
+                line-height: 1;
+            }
+
+            .kpi-sub {
+                margin: 6px 0 0;
+                color: var(--text-secondary);
+                font-size: 13px;
+            }
+
+            .hr {
+                border: 0;
+                border-top: 1px solid var(--border-default);
+                margin: var(--space-6) 0;
+            }
+
+            .footer-note {
+                margin-top: var(--space-8);
+                color: var(--text-muted);
+                font-size: 12px;
+                text-align: center;
+            }
+
+            @media (max-width: 1080px) {
+                .grid.cols-2,
+                .component-wrap {
+                    grid-template-columns: 1fr;
+                }
+
+                .stat-row {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 700px) {
+                .page {
+                    width: calc(100% - 24px);
+                    margin-top: 12px;
+                }
+
+                .topbar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .stat-row {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <header class="topbar">
+                <div class="brand">
+                    <span class="brand-accent"></span>
+                    <div>
+                        <h1>Industry Engine App Styleguide</h1>
+                        <p>
+                            Single-page brand reference creation (light and dark
+                            modes)
+                        </p>
+                    </div>
+                </div>
+                <button id="themeToggle" class="toggle" type="button">
+                    Switch to Dark
+                </button>
+            </header>
+
+            <section class="intro">
+                <h2>Implementation Rules</h2>
+                <p>
+                    Use these semantic tokens exactly. Build all screens with
+                    50px controls, rounded cards, navy-based neutrals, pink
+                    primary actions, cyan informational accents, and state
+                    colors shown below. This is the closest match to Smart Lists
+                    and the current Industry Engine product UI.
+                </p>
+            </section>
+
+            <div class="grid cols-2">
+                <section class="panel">
+                    <h3>Brand Core</h3>
+                    <p class="sub">
+                        Primary identity colors used across navigation, actions,
+                        links, and emphasis.
+                    </p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Token</th>
+                                <th>Hex</th>
+                                <th>Primary Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>brand-pink</code></td>
+                                <td><code>#D10956</code></td>
+                                <td>Primary CTA buttons, key highlights</td>
+                            </tr>
+                            <tr>
+                                <td><code>brand-cyan</code></td>
+                                <td><code>#02B1D0</code></td>
+                                <td>Info accents, charts, data labels</td>
+                            </tr>
+                            <tr>
+                                <td><code>brand-navy</code></td>
+                                <td><code>#0D062A</code></td>
+                                <td>Brand anchor, dark backgrounds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="hr" />
+                    <p class="sub">ML list stat accents</p>
+                    <div class="stack">
+                        <span class="token-box"
+                            ><span
+                                class="dot"
+                                style="background: #04b7db"
+                            ></span
+                            >Results #04B7DB</span
+                        >
+                        <span class="token-box"
+                            ><span
+                                class="dot"
+                                style="background: #60d394"
+                            ></span
+                            >Positive #60D394</span
+                        >
+                        <span class="token-box"
+                            ><span
+                                class="dot"
+                                style="background: #dd2d4a"
+                            ></span
+                            >Negative #DD2D4A</span
+                        >
+                        <span class="token-box"
+                            ><span
+                                class="dot"
+                                style="background: #3d3855"
+                            ></span
+                            >Overrides #3D3855</span
+                        >
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h3>Typography</h3>
+                    <p class="sub">
+                        Use one UI font and one numbers font throughout the app.
+                    </p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Spec</th>
+                                <th>Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UI font</td>
+                                <td><code>Poppins 400 / 500 / 700</code></td>
+                                <td>All labels, paragraphs, nav, buttons</td>
+                            </tr>
+                            <tr>
+                                <td>Numbers font</td>
+                                <td><code>Rubik-Numbers 400 / 500</code></td>
+                                <td>
+                                    KPIs, scores, pagination, monetary values
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td>
+                                    <code>16px</code> (or
+                                    <code>14px</code> dense tables)
+                                </td>
+                                <td>Main content text</td>
+                            </tr>
+                            <tr>
+                                <td>Control text</td>
+                                <td><code>14px / 700</code></td>
+                                <td>Buttons, tabs, toolbar controls</td>
+                            </tr>
+                            <tr>
+                                <td>Tiny labels</td>
+                                <td><code>11-12px</code> uppercase tracking</td>
+                                <td>Table headers, chips, metadata</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="hr" />
+                    <p class="kpi">980</p>
+                    <p class="kpi-sub">
+                        Example KPI using <code>Rubik-Numbers</code>
+                    </p>
+                </section>
+            </div>
+
+            <section class="panel section-gap">
+                <h3>Color Scales</h3>
+                <p class="sub">Raw palette values for design and theming.</p>
+                <div class="grid">
+                    <div>
+                        <p class="sub"><strong>Pink scale</strong></p>
+                        <div class="swatch-grid">
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #fef2f7"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-50</p>
+                                    <p class="hex">#fef2f7</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #fde7f1"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-100</p>
+                                    <p class="hex">#fde7f1</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #fccfe3"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-200</p>
+                                    <p class="hex">#fccfe3</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #fa9fc9"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-300</p>
+                                    <p class="hex">#fa9fc9</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #f765a8"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-400</p>
+                                    <p class="hex">#f765a8</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #d10956"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-500</p>
+                                    <p class="hex">#d10956</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #b80748"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-600</p>
+                                    <p class="hex">#b80748</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #9a063d"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-700</p>
+                                    <p class="hex">#9a063d</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #800636"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-800</p>
+                                    <p class="hex">#800636</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #6d0831"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-900</p>
+                                    <p class="hex">#6d0831</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #4a0522"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">pink-950</p>
+                                    <p class="hex">#4a0522</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="sub"><strong>Cyan scale</strong></p>
+                        <div class="swatch-grid">
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #e6f9fd"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-50</p>
+                                    <p class="hex">#e6f9fd</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #cef3fb"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-100</p>
+                                    <p class="hex">#cef3fb</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #9de8f7"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-200</p>
+                                    <p class="hex">#9de8f7</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #6bdcf3"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-300</p>
+                                    <p class="hex">#6bdcf3</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #34c7e8"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-400</p>
+                                    <p class="hex">#34c7e8</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #02b1d0"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-500</p>
+                                    <p class="hex">#02b1d0</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #028eb3"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-600</p>
+                                    <p class="hex">#028eb3</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #026b8a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-700</p>
+                                    <p class="hex">#026b8a</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #01566d"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-800</p>
+                                    <p class="hex">#01566d</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #01475b"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-900</p>
+                                    <p class="hex">#01475b</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #003344"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">cyan-950</p>
+                                    <p class="hex">#003344</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="sub"><strong>Navy scale</strong></p>
+                        <div class="swatch-grid">
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #f8f8fc"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-50</p>
+                                    <p class="hex">#f8f8fc</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #f2f2f8"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-100</p>
+                                    <p class="hex">#f2f2f8</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #e4e4ed"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-200</p>
+                                    <p class="hex">#e4e4ed</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #cfcfde"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-300</p>
+                                    <p class="hex">#cfcfde</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #9898b0"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-400</p>
+                                    <p class="hex">#9898b0</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #6e6e8a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-500</p>
+                                    <p class="hex">#6e6e8a</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #50506a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-600</p>
+                                    <p class="hex">#50506a</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #3b3b54"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-700</p>
+                                    <p class="hex">#3b3b54</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #313148"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-750</p>
+                                    <p class="hex">#313148</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #26263d"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-800</p>
+                                    <p class="hex">#26263d</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #151529"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-900</p>
+                                    <p class="hex">#151529</p>
+                                </div>
+                            </div>
+                            <div class="swatch">
+                                <div
+                                    class="chip"
+                                    style="background: #0d062a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">navy-950</p>
+                                    <p class="hex">#0d062a</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel section-gap">
+                <h3>Semantic Tokens and Usage</h3>
+                <p class="sub">
+                    These are the core tokens to implement first. All
+                    components should reference these, not random hex values.
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Light</th>
+                            <th>Dark</th>
+                            <th>Where to use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>bg-base</code></td>
+                            <td>#F8F8FC</td>
+                            <td>#0D062A</td>
+                            <td>Page background</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-elevated</code></td>
+                            <td>#F2F2F8</td>
+                            <td>#26263D</td>
+                            <td>Cards, side nav, major containers</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-surface</code></td>
+                            <td>#E4E4ED</td>
+                            <td>#313148</td>
+                            <td>Secondary surfaces, chips, table controls</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-surface-hover</code></td>
+                            <td>#CFCFDE</td>
+                            <td>#3B3B54</td>
+                            <td>Hover states on rows/buttons/nav items</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-primary</code></td>
+                            <td>#0D062A</td>
+                            <td>#FFFFFF</td>
+                            <td>Main text and titles</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-secondary</code></td>
+                            <td>#3B3B54</td>
+                            <td>#E4E4ED</td>
+                            <td>Supporting labels and nav text</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-muted</code></td>
+                            <td>#6E6E8A</td>
+                            <td>#CFCFDE</td>
+                            <td>Metadata, helper text, placeholders</td>
+                        </tr>
+                        <tr>
+                            <td><code>border-default</code></td>
+                            <td>#E4E4ED</td>
+                            <td>#3B3B54</td>
+                            <td>Card/input/table borders</td>
+                        </tr>
+                        <tr>
+                            <td><code>border-focus</code></td>
+                            <td>#0D062A</td>
+                            <td>#FFFFFF</td>
+                            <td>Focus rings for keyboard accessibility</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-link</code></td>
+                            <td>#026B8A</td>
+                            <td>#34C7E8</td>
+                            <td>Clickable text links</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-link-hover</code></td>
+                            <td>#01566D</td>
+                            <td>#6BDCF3</td>
+                            <td>Link hover state</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-success</code></td>
+                            <td>#F0FDF4</td>
+                            <td>rgba(34,197,94,0.15)</td>
+                            <td>Success status backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-warning</code></td>
+                            <td>#FFFBEB</td>
+                            <td>rgba(245,158,11,0.15)</td>
+                            <td>Warning status backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-error</code></td>
+                            <td>#FEF2F2</td>
+                            <td>rgba(239,68,68,0.15)</td>
+                            <td>Error status backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-info</code></td>
+                            <td>#E6F9FD</td>
+                            <td>rgba(2,177,208,0.15)</td>
+                            <td>Info status backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-disabled</code></td>
+                            <td>#F2F2F8</td>
+                            <td>#26263D</td>
+                            <td>Disabled controls</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="panel section-gap">
+                <h3>Component Reference</h3>
+                <p class="sub">
+                    Ready-to-recreate examples for the Smart Lists style.
+                </p>
+                <div class="component-wrap">
+                    <div class="demo">
+                        <h4>Buttons and Inputs</h4>
+                        <div class="stack">
+                            <button class="btn primary">Primary</button>
+                            <button class="btn neutral">Neutral</button>
+                            <button class="btn success">Success</button>
+                            <button class="btn warning">Warning</button>
+                            <button class="btn danger">Danger</button>
+                            <button class="btn neutral" disabled>
+                                Disabled
+                            </button>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div
+                            class="stack"
+                            style="flex-direction: column; align-items: stretch"
+                        >
+                            <label class="search-field" aria-label="Search">
+                                <svg
+                                    class="search-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    ></path>
+                                </svg>
+                                <input
+                                    class="input"
+                                    placeholder="Search collections..."
+                                />
+                            </label>
+                            <input
+                                class="input disabled"
+                                value="Disabled state"
+                                disabled
+                            />
+                        </div>
+                    </div>
+
+                    <div class="demo">
+                        <h4>Tabs + Pagination</h4>
+                        <div class="tab-rail">
+                            <button class="tab">My Lists</button>
+                            <button class="tab">Training Set</button>
+                            <button class="tab active">Results</button>
+                            <button class="tab">Analyse results</button>
+                        </div>
+                        <div style="height: 16px"></div>
+                        <div class="pagination">
+                            <button class="page-btn">‹</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">...</button>
+                            <button class="page-btn">9809</button>
+                            <button class="page-btn">›</button>
+                        </div>
+                    </div>
+
+                    <div class="demo">
+                        <h4>Stat Cards</h4>
+                        <div class="stat-row">
+                            <article class="stat">
+                                <p class="label">Results</p>
+                                <p class="value">
+                                    <span class="accent results"></span>980
+                                </p>
+                            </article>
+                            <article class="stat">
+                                <p class="label">Positive training</p>
+                                <p class="value">
+                                    <span class="accent positive"></span>6
+                                </p>
+                            </article>
+                            <article class="stat">
+                                <p class="label">Negative training</p>
+                                <p class="value">
+                                    <span class="accent negative"></span>2
+                                </p>
+                            </article>
+                            <article class="stat">
+                                <p class="label">Overrides</p>
+                                <p class="value">
+                                    <span class="accent overrides"></span>-
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="demo">
+                        <h4>Side Navigation</h4>
+                        <div class="side-preview">
+                            <div class="side-head">
+                                <span class="dot"></span>
+                                <strong>Industry Engine</strong>
+                            </div>
+                            <ul class="side-list">
+                                <li class="side-item">Dashboard</li>
+                                <li class="side-item">My Lists</li>
+                                <li class="side-item active">Smart Lists</li>
+                                <li class="side-item">Compare</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="demo" style="grid-column: 1 / -1">
+                        <h4>Result Row</h4>
+                        <div class="mini-table">
+                            <div class="mini-head">
+                                <div>Company</div>
+                                <div>Score</div>
+                                <div>Turnover</div>
+                                <div>Actions</div>
+                            </div>
+                            <div class="mini-row">
+                                <div>
+                                    <strong>SHONSYS LIMITED</strong><br />
+                                    <span
+                                        style="
+                                            color: var(--text-muted);
+                                            font-size: 12px;
+                                        "
+                                        >shonsys.com</span
+                                    >
+                                </div>
+                                <div class="score">
+                                    <div class="track">
+                                        <div
+                                            class="fill"
+                                            style="
+                                                width: 74%;
+                                                background: var(--green-500);
+                                            "
+                                        ></div>
+                                    </div>
+                                    <span style="color: var(--green-600)"
+                                        >74%</span
+                                    >
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--font-number);
+                                        font-weight: 600;
+                                    "
+                                >
+                                    £90K
+                                </div>
+                                <div
+                                    class="stack"
+                                    style="justify-content: flex-end"
+                                >
+                                    <button
+                                        class="icon-btn like"
+                                        aria-label="Yes"
+                                    >
+                                        Yes
+                                    </button>
+                                    <button
+                                        class="icon-btn dislike"
+                                        aria-label="No"
+                                    >
+                                        No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 12px"></div>
+                        <div class="stack">
+                            <span class="pill sic">SICs</span>
+                            <span class="pill rsic">RSICs</span>
+                            <span class="pill rtic">RTICs</span>
+                            <span class="pill cic">Sectors</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel section-gap">
+                <h3>Behavior and Interaction Spec</h3>
+                <p class="sub">
+                    Use these values globally to match product feel.
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                            <th>Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Control height</td>
+                            <td><code>50px</code></td>
+                            <td>
+                                Buttons, search, dropdown triggers, segmented
+                                toggles
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Radii</td>
+                            <td><code>8 / 12 / 16 / pill</code></td>
+                            <td>
+                                Inputs/buttons (8), nav/table chips (12), cards
+                                (16), pills (9999)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Focus ring</td>
+                            <td><code>2px solid border-focus</code></td>
+                            <td>All interactive elements</td>
+                        </tr>
+                        <tr>
+                            <td>Hover transition</td>
+                            <td><code>150-200ms ease</code></td>
+                            <td>Buttons, nav items, rows, tabs</td>
+                        </tr>
+                        <tr>
+                            <td>Spacing system</td>
+                            <td><code>4, 8, 12, 16, 24, 32</code></td>
+                            <td>8px-based rhythm</td>
+                        </tr>
+                        <tr>
+                            <td>Loading gradient</td>
+                            <td><code>#02b1d0 -> #8e7cff -> #d10956</code></td>
+                            <td>
+                                Progress bars and branded loading affordances
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="panel section-gap">
+                <h3>Copy-Paste Design Tokens</h3>
+                <p class="sub">
+                    Use this token block directly in app styles.
+                </p>
+                <pre class="code">
+:root {
+  --brand-pink: #d10956;
+  --brand-cyan: #02b1d0;
+  --brand-navy: #0d062a;
+  --stat-results: #04b7db;
+  --stat-positive: #60d394;
+  --stat-negative: #dd2d4a;
+  --stat-overrides: #3d3855;
+
+  --bg-base: #f8f8fc;
+  --bg-elevated: #f2f2f8;
+  --bg-surface: #e4e4ed;
+  --bg-surface-hover: #cfcfde;
+  --bg-input: #e4e4ed;
+
+  --text-primary: #0d062a;
+  --text-secondary: #3b3b54;
+  --text-muted: #6e6e8a;
+
+  --border-default: #e4e4ed;
+  --border-focus: #0d062a;
+
+  --text-link: #026b8a;
+  --text-link-hover: #01566d;
+
+  --bg-success: #f0fdf4;
+  --text-success: #166534;
+  --border-success: #22c55e;
+
+  --bg-warning: #fffbeb;
+  --text-warning: #92400e;
+  --border-warning: #f59e0b;
+
+  --bg-error: #fef2f2;
+  --text-error: #991b1b;
+  --border-error: #ef4444;
+}
+
+[data-theme="dark"] {
+  --bg-base: #0d062a;
+  --bg-elevated: #26263d;
+  --bg-surface: #313148;
+  --bg-surface-hover: #3b3b54;
+  --bg-input: #151529;
+
+  --text-primary: #ffffff;
+  --text-secondary: #e4e4ed;
+  --text-muted: #cfcfde;
+
+  --border-default: #3b3b54;
+  --border-focus: #ffffff;
+
+  --text-link: #34c7e8;
+  --text-link-hover: #6bdcf3;
+}</pre
+                >
+            </section>
+
+            <p class="footer-note">
+                Source alignment: Industry Engine Smart Lists tokens and
+                component behavior. This page intentionally ignores Tailwind
+                class usage and focuses on direct design values.
+            </p>
+        </div>
+
+        <script>
+            (function () {
+                const root = document.documentElement;
+                const button = document.getElementById("themeToggle");
+                const storageKey = "industry-engine-styleguide-theme";
+
+                function setTheme(theme) {
+                    root.setAttribute("data-theme", theme);
+                    button.textContent =
+                        theme === "dark" ? "Switch to Light" : "Switch to Dark";
+                    try {
+                        localStorage.setItem(storageKey, theme);
+                    } catch (err) {
+                        // ignore
+                    }
+                }
+
+                let initial = "light";
+                try {
+                    const saved = localStorage.getItem(storageKey);
+                    if (saved === "light" || saved === "dark") initial = saved;
+                } catch (err) {
+                    // ignore
+                }
+                setTheme(initial);
+
+                button.addEventListener("click", function () {
+                    const next =
+                        root.getAttribute("data-theme") === "dark"
+                            ? "light"
+                            : "dark";
+                    setTheme(next);
+                });
+            })();
+        </script>
+    </body>
+</html>
