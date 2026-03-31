@@ -510,6 +510,9 @@
             }
 
             .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 height: 50px;
                 padding: 0 16px;
                 border: 0;
@@ -518,10 +521,15 @@
                 font-size: 14px;
                 font-weight: 700;
                 cursor: pointer;
+                text-decoration: none;
                 transition:
                     background var(--duration-fast) var(--easing-standard),
                     color var(--duration-fast) var(--easing-standard),
                     opacity var(--duration-fast) var(--easing-standard);
+            }
+
+            .btn:hover {
+                text-decoration: none;
             }
 
             .btn:focus-visible,
@@ -1022,6 +1030,265 @@
                 margin: var(--space-6) 0;
             }
 
+            .asset-library {
+                position: relative;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        circle at top right,
+                        rgba(2, 177, 208, 0.12),
+                        transparent 24%
+                    ),
+                    radial-gradient(
+                        circle at top left,
+                        rgba(209, 9, 86, 0.1),
+                        transparent 18%
+                    ),
+                    var(--bg-elevated);
+            }
+
+            .asset-library-head {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: var(--space-4);
+                flex-wrap: wrap;
+            }
+
+            .asset-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .asset-badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 40px;
+                padding: 8px 14px;
+                border-radius: var(--radius-pill);
+                border: 1px solid var(--border-default);
+                background: rgba(255, 255, 255, 0.45);
+                color: var(--text-secondary);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+
+            [data-theme="dark"] .asset-badge {
+                background: rgba(13, 6, 42, 0.32);
+            }
+
+            .asset-groups {
+                display: grid;
+                gap: var(--space-6);
+                margin-top: var(--space-6);
+            }
+
+            .asset-group {
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-xl);
+                padding: var(--space-5);
+                background: rgba(255, 255, 255, 0.32);
+            }
+
+            [data-theme="dark"] .asset-group {
+                background: rgba(13, 6, 42, 0.24);
+            }
+
+            .asset-group-head {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: var(--space-4);
+                flex-wrap: wrap;
+                margin-bottom: var(--space-4);
+            }
+
+            .asset-group h4 {
+                margin: 0;
+                font-size: 18px;
+            }
+
+            .asset-group p {
+                margin: 6px 0 0;
+                color: var(--text-secondary);
+                font-size: 14px;
+                max-width: 78ch;
+            }
+
+            .asset-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: var(--space-4);
+            }
+
+            .asset-card {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+                border: 1px solid var(--border-default);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                background: var(--bg-elevated);
+                box-shadow: var(--shadow-card);
+            }
+
+            .asset-preview {
+                position: relative;
+                min-height: 184px;
+                padding: var(--space-4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px solid var(--border-default);
+                overflow: hidden;
+            }
+
+            .asset-preview::after {
+                content: attr(data-surface-label);
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                padding: 4px 8px;
+                border-radius: var(--radius-pill);
+                background: rgba(13, 6, 42, 0.78);
+                color: #fff;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+
+            .asset-preview.surface-light {
+                background:
+                    linear-gradient(
+                        135deg,
+                        rgba(255, 255, 255, 0.95),
+                        rgba(236, 244, 251, 0.95)
+                    ),
+                    linear-gradient(
+                            45deg,
+                            rgba(13, 6, 42, 0.03) 25%,
+                            transparent 25%
+                        )
+                        0 0 / 16px 16px,
+                    linear-gradient(
+                            -45deg,
+                            rgba(13, 6, 42, 0.03) 25%,
+                            transparent 25%
+                        )
+                        0 8px / 16px 16px,
+                    linear-gradient(
+                            45deg,
+                            transparent 75%,
+                            rgba(13, 6, 42, 0.03) 75%
+                        )
+                        8px -8px / 16px 16px,
+                    linear-gradient(
+                            -45deg,
+                            transparent 75%,
+                            rgba(13, 6, 42, 0.03) 75%
+                        )
+                        -8px 0 / 16px 16px;
+            }
+
+            .asset-preview.surface-soft {
+                background:
+                    radial-gradient(
+                        circle at top right,
+                        rgba(2, 177, 208, 0.14),
+                        transparent 30%
+                    ),
+                    linear-gradient(135deg, #f3f1f8, #ece9f5);
+            }
+
+            .asset-preview.surface-dark {
+                background:
+                    radial-gradient(
+                        circle at top right,
+                        rgba(2, 177, 208, 0.14),
+                        transparent 26%
+                    ),
+                    linear-gradient(135deg, #0d062a, #22164d);
+            }
+
+            .asset-media {
+                width: 100%;
+                max-width: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 12px 24px rgba(13, 6, 42, 0.12));
+            }
+
+            .asset-media.wide {
+                max-height: 76px;
+            }
+
+            .asset-media.stacked {
+                max-height: 118px;
+            }
+
+            .asset-media.icon {
+                max-width: 110px;
+                max-height: 96px;
+            }
+
+            .asset-card[data-size="badge"] .asset-media {
+                max-height: 90px;
+            }
+
+            .asset-meta {
+                padding: var(--space-4);
+                display: grid;
+                gap: 12px;
+            }
+
+            .asset-meta-top {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .asset-meta h5 {
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.2;
+            }
+
+            .asset-spec {
+                margin: 6px 0 0;
+                color: var(--text-muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+
+            .asset-copy {
+                margin: 6px 0 0;
+                color: var(--text-secondary);
+                font-size: 13px;
+            }
+
+            .asset-filename {
+                margin: 0;
+                font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", monospace;
+                font-size: 12px;
+                color: var(--text-muted);
+                word-break: break-all;
+            }
+
+            .asset-download {
+                min-width: 116px;
+                white-space: nowrap;
+            }
+
             .footer-note {
                 margin-top: var(--space-8);
                 color: var(--text-muted);
@@ -1049,6 +1316,15 @@
                 .topbar {
                     flex-direction: column;
                     align-items: flex-start;
+                }
+
+                .asset-library-head,
+                .asset-meta-top {
+                    flex-direction: column;
+                }
+
+                .asset-download {
+                    width: 100%;
                 }
 
                 .stat-row {
@@ -1084,6 +1360,33 @@
                     colors shown below. This is the closest match to Smart Lists
                     and the current Industry Engine product UI.
                 </p>
+            </section>
+
+            <section class="panel section-gap asset-library">
+                <div class="asset-library-head">
+                    <div>
+                        <h3>Asset Library</h3>
+                        <p class="sub">
+                            Download-ready brand assets grouped by use case.
+                            Filenames have been normalized for cleaner handoff.
+                        </p>
+                    </div>
+                    <div class="asset-actions">
+                        <span id="assetCount" class="asset-badge">0 assets</span>
+                        <a
+                            class="btn primary"
+                            href="downloads/industry-engine-styleguide-assets.zip"
+                            download="industry-engine-styleguide-assets.zip"
+                            >Download All Assets</a
+                        >
+                    </div>
+                </div>
+                <div id="assetGroups" class="asset-groups"></div>
+                <noscript>
+                    <p class="sub">
+                        Enable JavaScript to render the asset preview grid.
+                    </p>
+                </noscript>
             </section>
 
             <div class="grid cols-2">
@@ -2007,7 +2310,222 @@
             (function () {
                 const root = document.documentElement;
                 const button = document.getElementById("themeToggle");
+                const assetCount = document.getElementById("assetCount");
+                const assetGroupsRoot = document.getElementById("assetGroups");
                 const storageKey = "industry-engine-styleguide-theme";
+                const assetGroups = [
+                    {
+                        title: "Core Logos",
+                        description:
+                            "Primary brand marks for standard product, deck, and website placements.",
+                        items: [
+                            {
+                                title: "Data City Logo",
+                                file: "images/logos/datacity-logo.svg",
+                                spec: "SVG • 3.6 KB",
+                                copy: "Default full lockup for everyday brand use.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "wide",
+                            },
+                            {
+                                title: "Data City Logo Navy",
+                                file: "images/logos/datacity-logo-navy.svg",
+                                spec: "SVG • 3.4 KB",
+                                copy: "Single-colour navy version for light UI surfaces.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "wide",
+                            },
+                            {
+                                title: "Data City Logo White",
+                                file: "images/logos/datacity-logo-white.svg",
+                                spec: "SVG • 3.4 KB",
+                                copy: "Reverse lockup for dark panels and photography.",
+                                surface: "dark",
+                                surfaceLabel: "Dark surface",
+                                size: "wide",
+                            },
+                            {
+                                title: "Data City Icon",
+                                file: "images/logos/datacity-logo-icon.svg",
+                                spec: "SVG • 849 B",
+                                copy: "Compact mark for avatars, favicons, and tighter UI moments.",
+                                surface: "soft",
+                                surfaceLabel: "Brand surface",
+                                size: "icon",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Stacked Logos",
+                        description:
+                            "Vertical lockups for narrow spaces, social crops, and constrained layouts.",
+                        items: [
+                            {
+                                title: "Data City Stacked",
+                                file: "images/logos/datacity-logo-stacked.svg",
+                                spec: "SVG • 3.4 KB",
+                                copy: "Default vertical lockup for compact placements.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "stacked",
+                            },
+                            {
+                                title: "Data City Stacked Navy",
+                                file: "images/logos/datacity-logo-stacked-navy.svg",
+                                spec: "SVG • 3.2 KB",
+                                copy: "Single-colour navy vertical lockup for light backgrounds.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "stacked",
+                            },
+                            {
+                                title: "Data City Stacked White",
+                                file: "images/logos/datacity-logo-stacked-white.svg",
+                                spec: "SVG • 3.2 KB",
+                                copy: "Reverse stacked lockup for dark surfaces.",
+                                surface: "dark",
+                                surfaceLabel: "Dark surface",
+                                size: "stacked",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Lockups and Partners",
+                        description:
+                            "Attribution lockups and partner marks for co-branded or powered-by contexts.",
+                        items: [
+                            {
+                                title: "Powered by Datacity",
+                                file: "images/logos/powered-by-logo.png",
+                                spec: "PNG • 64 KB",
+                                copy: "Transparent dark-wordmark lockup for light backgrounds.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "badge",
+                            },
+                            {
+                                title: "Powered by Datacity Dark",
+                                file: "images/logos/powered-by-logo-dark.png",
+                                spec: "PNG • 64 KB",
+                                copy: "Dark-background powered-by lockup for dark layouts.",
+                                surface: "dark",
+                                surfaceLabel: "Dark surface",
+                                size: "badge",
+                            },
+                            {
+                                title: "Dealroom Logo",
+                                file: "images/logos/dealroom-logo.svg",
+                                spec: "SVG • 8.7 KB",
+                                copy: "Partner logo asset for co-branded layouts and references.",
+                                surface: "light",
+                                surfaceLabel: "Light surface",
+                                size: "wide",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Product Icons",
+                        description:
+                            "Supporting product graphics used across the Industry Engine experience.",
+                        items: [
+                            {
+                                title: "Analyse",
+                                file: "images/icons/analyse.svg",
+                                spec: "SVG • 746 B",
+                                copy: "Feature icon for analysis and insight workflows.",
+                                surface: "soft",
+                                surfaceLabel: "Brand surface",
+                                size: "icon",
+                            },
+                            {
+                                title: "Compare",
+                                file: "images/icons/compare.svg",
+                                spec: "SVG • 611 B",
+                                copy: "Feature icon for side-by-side comparison states.",
+                                surface: "soft",
+                                surfaceLabel: "Brand surface",
+                                size: "icon",
+                            },
+                            {
+                                title: "ML List",
+                                file: "images/icons/ml-list.svg",
+                                spec: "SVG • 945 B",
+                                copy: "Module icon for Smart Lists and list-oriented navigation.",
+                                surface: "soft",
+                                surfaceLabel: "Brand surface",
+                                size: "icon",
+                            },
+                            {
+                                title: "Industry Engine Gradient Mark",
+                                file: "images/icons/industry-engine-logo-gradient.svg",
+                                spec: "SVG • 1.5 KB",
+                                copy: "Gradient brand mark for accent, hero, and splash treatments.",
+                                surface: "soft",
+                                surfaceLabel: "Brand surface",
+                                size: "icon",
+                            },
+                        ],
+                    },
+                ];
+
+                function renderAssetCard(item) {
+                    const filename = item.file.split("/").pop();
+
+                    return `
+                        <article class="asset-card" data-size="${item.size}">
+                            <div class="asset-preview surface-${item.surface}" data-surface-label="${item.surfaceLabel}">
+                                <img class="asset-media ${item.size}" src="${item.file}" alt="${item.title}" loading="lazy" />
+                            </div>
+                            <div class="asset-meta">
+                                <div class="asset-meta-top">
+                                    <div>
+                                        <h5>${item.title}</h5>
+                                        <p class="asset-spec">${item.spec}</p>
+                                        <p class="asset-copy">${item.copy}</p>
+                                    </div>
+                                    <a class="btn neutral asset-download" href="${item.file}" download="${filename}">Download</a>
+                                </div>
+                                <p class="asset-filename">${filename}</p>
+                            </div>
+                        </article>
+                    `;
+                }
+
+                function renderAssetLibrary() {
+                    if (!assetGroupsRoot || !assetCount) return;
+
+                    const totalAssets = assetGroups.reduce(function (
+                        count,
+                        group
+                    ) {
+                        return count + group.items.length;
+                    },
+                    0);
+
+                    assetCount.textContent = `${totalAssets} assets`;
+                    assetGroupsRoot.innerHTML = assetGroups
+                        .map(function (group) {
+                            return `
+                                <section class="asset-group">
+                                    <div class="asset-group-head">
+                                        <div>
+                                            <h4>${group.title}</h4>
+                                            <p>${group.description}</p>
+                                        </div>
+                                        <span class="asset-badge">${group.items.length} ${group.items.length === 1 ? "asset" : "assets"}</span>
+                                    </div>
+                                    <div class="asset-grid">
+                                        ${group.items
+                                            .map(renderAssetCard)
+                                            .join("")}
+                                    </div>
+                                </section>
+                            `;
+                        })
+                        .join("");
+                }
 
                 function setTheme(theme) {
                     root.setAttribute("data-theme", theme);
@@ -2028,6 +2546,7 @@
                     // ignore
                 }
                 setTheme(initial);
+                renderAssetLibrary();
 
                 button.addEventListener("click", function () {
                     const next =
