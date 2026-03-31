@@ -1066,6 +1066,11 @@
                 gap: var(--space-4);
             }
 
+            .asset-group.compact .asset-grid {
+                grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+                gap: 14px;
+            }
+
             .asset-card {
                 display: flex;
                 flex-direction: column;
@@ -1086,6 +1091,11 @@
                 justify-content: center;
                 border-bottom: 1px solid var(--border-default);
                 overflow: hidden;
+            }
+
+            .asset-card.compact .asset-preview {
+                min-height: 118px;
+                padding: 12px;
             }
 
             .asset-preview::after {
@@ -1176,6 +1186,11 @@
                 max-height: 96px;
             }
 
+            .asset-media.icon-compact {
+                max-width: 64px;
+                max-height: 56px;
+            }
+
             .asset-card[data-size="badge"] .asset-media {
                 max-height: 90px;
             }
@@ -1227,6 +1242,37 @@
             .asset-download {
                 min-width: 116px;
                 white-space: nowrap;
+            }
+
+            .asset-card.compact .asset-meta {
+                padding: 12px;
+                gap: 8px;
+            }
+
+            .asset-card.compact .asset-meta-top {
+                display: block;
+            }
+
+            .asset-card.compact .asset-meta h5 {
+                font-size: 13px;
+            }
+
+            .asset-card.compact .asset-spec {
+                margin-top: 4px;
+            }
+
+            .asset-card.compact .asset-copy {
+                display: none;
+            }
+
+            .asset-card.compact .asset-download {
+                width: 100%;
+                min-width: 0;
+                margin-top: 10px;
+            }
+
+            .asset-card.compact .asset-filename {
+                font-size: 10px;
             }
 
             .footer-note {
@@ -2220,6 +2266,254 @@
                     "downloadAllAssets"
                 );
                 const storageKey = "industry-engine-styleguide-theme";
+                const webBrightGradientFiles = [
+                    "images/icons/Web/SVG/Bright Gradient/B2B Marketing Companies.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Banks.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Case Studies.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Deal Origination.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Economic Analysis.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Economic Consultancies.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Fast Growing.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Free Trial.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Insights Blog.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Local Govt + Councils.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Market Research.svg",
+                    "images/icons/Web/SVG/Bright Gradient/National Government.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Newsletter.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Our Data.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Pricing.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Reports.svg",
+                    "images/icons/Web/SVG/Bright Gradient/SIC Codes.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Sector Experts.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Universities + Academics.svg",
+                    "images/icons/Web/SVG/Bright Gradient/Venture Capital + PE.svg",
+                ];
+                const webWhiteFiles = [
+                    "images/icons/Web/SVG/White/B2B Marketing Companies - White.svg",
+                    "images/icons/Web/SVG/White/Banks - White.svg",
+                    "images/icons/Web/SVG/White/Case Studies - White.svg",
+                    "images/icons/Web/SVG/White/Deal Origination - White.svg",
+                    "images/icons/Web/SVG/White/Economic Analysis - White.svg",
+                    "images/icons/Web/SVG/White/Economic Consultancies - White.svg",
+                    "images/icons/Web/SVG/White/Fast Growing - White.svg",
+                    "images/icons/Web/SVG/White/Free Trial - White.svg",
+                    "images/icons/Web/SVG/White/Insights Blog - White.svg",
+                    "images/icons/Web/SVG/White/Local Govt + Councils - White.svg",
+                    "images/icons/Web/SVG/White/Market Research - White.svg",
+                    "images/icons/Web/SVG/White/National Government - White.svg",
+                    "images/icons/Web/SVG/White/Newsletter - White.svg",
+                    "images/icons/Web/SVG/White/Our Data - White.svg",
+                    "images/icons/Web/SVG/White/Pricing - White.svg",
+                    "images/icons/Web/SVG/White/Reports - White.svg",
+                    "images/icons/Web/SVG/White/SIC Codes - White.svg",
+                    "images/icons/Web/SVG/White/Sector Experts - White.svg",
+                    "images/icons/Web/SVG/White/Universities + Academics - White.svg",
+                    "images/icons/Web/SVG/White/Venture Capital + PE - White.svg",
+                ];
+                const rticNavyGradientFiles = [
+                    "images/icons/RTICs/SVG/Navy Gradient/Advanced Manufacturing.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Advanced Materials.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/AgriTech.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Artificial Intelligence.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/CleanTech.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Digital Creative Industries.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Energy Generation.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Energy Management.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/FinTech.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Gaming.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Life Sciences.svg",
+                    "images/icons/RTICs/SVG/Navy Gradient/Net Zero.svg",
+                ];
+                const rticWhiteFiles = [
+                    "images/icons/RTICs/SVG/White/Advanced Manufacturing - White.svg",
+                    "images/icons/RTICs/SVG/White/Advanced Materials - White.svg",
+                    "images/icons/RTICs/SVG/White/AgriTech - White.svg",
+                    "images/icons/RTICs/SVG/White/Artificial Intelligence - White.svg",
+                    "images/icons/RTICs/SVG/White/CleanTech - White.svg",
+                    "images/icons/RTICs/SVG/White/Digital Creative Industries - White.svg",
+                    "images/icons/RTICs/SVG/White/Energy Generation - White.svg",
+                    "images/icons/RTICs/SVG/White/Energy Management - White.svg",
+                    "images/icons/RTICs/SVG/White/FinTech - White.svg",
+                    "images/icons/RTICs/SVG/White/Gaming - White.svg",
+                    "images/icons/RTICs/SVG/White/Life Sciences - White.svg",
+                    "images/icons/RTICs/SVG/White/Net Zero - White.svg",
+                ];
+                const platformLightGradientFiles = [
+                    "images/icons/Platform/SVG/Light Gradient/Address - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Admin portal - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Analyse - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Compare - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Dashboard - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Email - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Explore - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Knowledge base - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Link - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/ML list builder (build your own classifications with AI) - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Manage Account - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/My lists - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Person - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Phone - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Search - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Similar companies - Light Gradient.svg",
+                    "images/icons/Platform/SVG/Light Gradient/Social - Light Gradient.svg",
+                ];
+                const platformNavyGradientFiles = [
+                    "images/icons/Platform/SVG/Navy Gradient/Address - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Admin portal - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Analyse - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Compare - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Dashboard - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Email - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Explore - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Knowledge base - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Link - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/ML list builder (build your own classifications with AI) - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Manage Account - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/My lists - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Person - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Phone - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Search - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Similar companies - Navy Gradient.svg",
+                    "images/icons/Platform/SVG/Navy Gradient/Social - Navy Gradient.svg",
+                ];
+                const platformNavyFiles = [
+                    "images/icons/Platform/SVG/Navy/Address - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Admin portal - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Analyse - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Compare - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Dashboard - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Email - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Explore - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Knowledge base - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Link - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/ML list builder (build your own classifications with AI) - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Manage Account - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/My lists - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Person - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Phone - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Search - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Similar companies - Navy.svg",
+                    "images/icons/Platform/SVG/Navy/Social - Navy.svg",
+                ];
+                const platformWhiteFiles = [
+                    "images/icons/Platform/SVG/White/Address - White.svg",
+                    "images/icons/Platform/SVG/White/Admin portal - White.svg",
+                    "images/icons/Platform/SVG/White/Analyse - White.svg",
+                    "images/icons/Platform/SVG/White/Compare - White.svg",
+                    "images/icons/Platform/SVG/White/Dashboard - White.svg",
+                    "images/icons/Platform/SVG/White/Email - White.svg",
+                    "images/icons/Platform/SVG/White/Explore - White.svg",
+                    "images/icons/Platform/SVG/White/Knowledge base - White.svg",
+                    "images/icons/Platform/SVG/White/Link - White.svg",
+                    "images/icons/Platform/SVG/White/ML list builder (build your own classifications with AI) - White.svg",
+                    "images/icons/Platform/SVG/White/Manage Account - White.svg",
+                    "images/icons/Platform/SVG/White/My lists - White.svg",
+                    "images/icons/Platform/SVG/White/Person - White.svg",
+                    "images/icons/Platform/SVG/White/Phone - White.svg",
+                    "images/icons/Platform/SVG/White/Search - White.svg",
+                    "images/icons/Platform/SVG/White/Similar companies - White.svg",
+                    "images/icons/Platform/SVG/White/Social - White.svg",
+                ];
+
+                function fileNameFromPath(file) {
+                    return file.split("/").pop();
+                }
+
+                function formatAssetTitle(file) {
+                    return fileNameFromPath(file)
+                        .replace(/\.svg$/i, "")
+                        .replace(
+                            /\s-\s(?:White|Light Gradient|Navy Gradient|Navy)$/i,
+                            ""
+                        )
+                        .trim();
+                }
+
+                function buildIconGroup(config) {
+                    return {
+                        title: config.title,
+                        description: config.description,
+                        compact: true,
+                        items: config.files.map(function (file) {
+                            return {
+                                title: formatAssetTitle(file),
+                                file: file,
+                                spec: "SVG",
+                                copy: "",
+                                surface: config.surface,
+                                surfaceLabel: config.surfaceLabel,
+                                size: "icon-compact",
+                                compact: true,
+                            };
+                        }),
+                    };
+                }
+
+                const iconGroups = [
+                    buildIconGroup({
+                        title: "Web Icons / Bright Gradient",
+                        description:
+                            "Website icon set in the bright gradient treatment.",
+                        files: webBrightGradientFiles,
+                        surface: "soft",
+                        surfaceLabel: "Bright gradient",
+                    }),
+                    buildIconGroup({
+                        title: "Web Icons / White",
+                        description:
+                            "Website icon set reversed for dark backgrounds.",
+                        files: webWhiteFiles,
+                        surface: "dark",
+                        surfaceLabel: "White SVG",
+                    }),
+                    buildIconGroup({
+                        title: "RTICs / Navy Gradient",
+                        description:
+                            "RTIC icon set in the navy gradient treatment.",
+                        files: rticNavyGradientFiles,
+                        surface: "light",
+                        surfaceLabel: "Navy gradient",
+                    }),
+                    buildIconGroup({
+                        title: "RTICs / White",
+                        description:
+                            "RTIC icon set reversed for dark backgrounds.",
+                        files: rticWhiteFiles,
+                        surface: "dark",
+                        surfaceLabel: "White SVG",
+                    }),
+                    buildIconGroup({
+                        title: "Platform / Light Gradient",
+                        description:
+                            "Platform UI icon set in the light gradient treatment.",
+                        files: platformLightGradientFiles,
+                        surface: "soft",
+                        surfaceLabel: "Light gradient",
+                    }),
+                    buildIconGroup({
+                        title: "Platform / Navy Gradient",
+                        description:
+                            "Platform UI icon set in the navy gradient treatment.",
+                        files: platformNavyGradientFiles,
+                        surface: "light",
+                        surfaceLabel: "Navy gradient",
+                    }),
+                    buildIconGroup({
+                        title: "Platform / Navy",
+                        description: "Platform UI icon set in flat navy.",
+                        files: platformNavyFiles,
+                        surface: "light",
+                        surfaceLabel: "Navy SVG",
+                    }),
+                    buildIconGroup({
+                        title: "Platform / White",
+                        description:
+                            "Platform UI icon set reversed for dark backgrounds.",
+                        files: platformWhiteFiles,
+                        surface: "dark",
+                        surfaceLabel: "White SVG",
+                    }),
+                ];
                 const assetGroups = [
                     {
                         title: "Core Logos",
@@ -2332,56 +2626,14 @@
                             },
                         ],
                     },
-                    {
-                        title: "Product Icons",
-                        description:
-                            "Supporting product graphics used across the Industry Engine experience.",
-                        items: [
-                            {
-                                title: "Analyse",
-                                file: "images/icons/analyse.svg",
-                                spec: "SVG • 746 B",
-                                copy: "Feature icon for analysis and insight workflows.",
-                                surface: "soft",
-                                surfaceLabel: "Brand surface",
-                                size: "icon",
-                            },
-                            {
-                                title: "Compare",
-                                file: "images/icons/compare.svg",
-                                spec: "SVG • 611 B",
-                                copy: "Feature icon for side-by-side comparison states.",
-                                surface: "soft",
-                                surfaceLabel: "Brand surface",
-                                size: "icon",
-                            },
-                            {
-                                title: "ML List",
-                                file: "images/icons/ml-list.svg",
-                                spec: "SVG • 945 B",
-                                copy: "Module icon for Smart Lists and list-oriented navigation.",
-                                surface: "soft",
-                                surfaceLabel: "Brand surface",
-                                size: "icon",
-                            },
-                            {
-                                title: "Industry Engine Gradient Mark",
-                                file: "images/icons/industry-engine-logo-gradient.svg",
-                                spec: "SVG • 1.5 KB",
-                                copy: "Gradient brand mark for accent, hero, and splash treatments.",
-                                surface: "soft",
-                                surfaceLabel: "Brand surface",
-                                size: "icon",
-                            },
-                        ],
-                    },
+                    ...iconGroups,
                 ];
 
                 function renderAssetCard(item) {
-                    const filename = item.file.split("/").pop();
+                    const filename = fileNameFromPath(item.file);
 
                     return `
-                        <article class="asset-card" data-size="${item.size}">
+                        <article class="asset-card${item.compact ? " compact" : ""}" data-size="${item.size}">
                             <div class="asset-preview surface-${item.surface}" data-surface-label="${item.surfaceLabel}">
                                 <img class="asset-media ${item.size}" src="${item.file}" alt="${item.title}" loading="lazy" />
                             </div>
@@ -2389,8 +2641,8 @@
                                 <div class="asset-meta-top">
                                     <div>
                                         <h5>${item.title}</h5>
-                                        <p class="asset-spec">${item.spec}</p>
-                                        <p class="asset-copy">${item.copy}</p>
+                                        ${item.spec ? `<p class="asset-spec">${item.spec}</p>` : ""}
+                                        ${item.copy ? `<p class="asset-copy">${item.copy}</p>` : ""}
                                     </div>
                                     <a class="btn neutral asset-download" href="${item.file}" download="${filename}" data-file="${item.file}" data-filename="${filename}">Download</a>
                                 </div>
@@ -2441,7 +2693,7 @@
                     assetGroupsRoot.innerHTML = assetGroups
                         .map(function (group) {
                             return `
-                                <section class="asset-group">
+                                <section class="asset-group${group.compact ? " compact" : ""}">
                                     <div class="asset-group-head">
                                         <div>
                                             <h4>${group.title}</h4>
