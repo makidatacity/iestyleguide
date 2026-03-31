@@ -1308,6 +1308,7 @@
                     <div class="asset-actions">
                         <span id="assetCount" class="asset-badge">0 assets</span>
                         <a
+                            id="downloadAllAssets"
                             class="btn primary"
                             href="downloads/industry-engine-styleguide-assets.zip"
                             download="industry-engine-styleguide-assets.zip"
@@ -2215,6 +2216,9 @@
                 const button = document.getElementById("themeToggle");
                 const assetCount = document.getElementById("assetCount");
                 const assetGroupsRoot = document.getElementById("assetGroups");
+                const downloadAllAssets = document.getElementById(
+                    "downloadAllAssets"
+                );
                 const storageKey = "industry-engine-styleguide-theme";
                 const assetGroups = [
                     {
@@ -2388,12 +2392,38 @@
                                         <p class="asset-spec">${item.spec}</p>
                                         <p class="asset-copy">${item.copy}</p>
                                     </div>
-                                    <a class="btn neutral asset-download" href="${item.file}" download="${filename}">Download</a>
+                                    <a class="btn neutral asset-download" href="${item.file}" download="${filename}" data-file="${item.file}" data-filename="${filename}">Download</a>
                                 </div>
                                 <p class="asset-filename">${filename}</p>
                             </div>
                         </article>
                     `;
+                }
+
+                async function forceDownload(file, filename) {
+                    try {
+                        const response = await fetch(file);
+                        if (!response.ok) {
+                            throw new Error(
+                                `Download failed with status ${response.status}`
+                            );
+                        }
+
+                        const blob = await response.blob();
+                        const objectUrl = URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = objectUrl;
+                        link.download = filename;
+                        document.body.appendChild(link);
+                        link.click();
+                        link.remove();
+
+                        window.setTimeout(function () {
+                            URL.revokeObjectURL(objectUrl);
+                        }, 1000);
+                    } catch (err) {
+                        window.location.href = file;
+                    }
                 }
 
                 function renderAssetLibrary() {
@@ -2450,6 +2480,25 @@
                 }
                 setTheme(initial);
                 renderAssetLibrary();
+
+                assetGroupsRoot.addEventListener("click", function (event) {
+                    const downloadLink = event.target.closest(".asset-download");
+                    if (!downloadLink) return;
+
+                    event.preventDefault();
+                    forceDownload(
+                        downloadLink.dataset.file,
+                        downloadLink.dataset.filename
+                    );
+                });
+
+                downloadAllAssets.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    forceDownload(
+                        "downloads/industry-engine-styleguide-assets.zip",
+                        "industry-engine-styleguide-assets.zip"
+                    );
+                });
 
                 button.addEventListener("click", function () {
                     const next =
