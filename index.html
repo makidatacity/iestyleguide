@@ -175,7 +175,7 @@
                 --radius-md: 8px;
                 --radius-lg: 12px;
                 --radius-xl: 16px;
-                --radius-pill: 9999px;
+                --radius-pill: 99rem;
 
                 --space-1: 4px;
                 --space-2: 8px;
@@ -330,7 +330,7 @@
                 background: var(--bg-surface);
                 color: var(--text-primary);
                 border-radius: var(--radius-pill);
-                height: 40px;
+                height: 44px;
                 padding: 0 14px;
                 font-family: var(--font-sans);
                 font-weight: 600;
@@ -513,10 +513,10 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                height: 50px;
+                height: 44px;
                 padding: 0 16px;
                 border: 0;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-pill);
                 font-family: var(--font-sans);
                 font-size: 14px;
                 font-weight: 700;
@@ -568,15 +568,6 @@
                 background: var(--green-600);
             }
 
-            .btn.warning {
-                background: #f59e0b;
-                color: #fff;
-            }
-
-            .btn.warning:hover {
-                background: #d97706;
-            }
-
             .btn.danger {
                 background: #dc2626;
                 color: #fff;
@@ -602,10 +593,10 @@
             }
 
             .input {
-                height: 50px;
+                height: 44px;
                 width: 100%;
                 border: 1px solid transparent;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-pill);
                 background: var(--bg-input);
                 color: var(--text-primary);
                 font-family: var(--font-sans);
@@ -655,14 +646,14 @@
                 align-items: center;
                 gap: 4px;
                 background: var(--navy-300);
-                border-radius: var(--radius-lg);
+                border-radius: var(--radius-pill);
                 padding: 6px;
             }
 
             .tab {
                 border: 0;
-                height: 36px;
-                border-radius: var(--radius-md);
+                height: 44px;
+                border-radius: var(--radius-pill);
                 padding: 0 14px;
                 background: transparent;
                 color: var(--text-secondary);
@@ -685,57 +676,6 @@
                 background: var(--navy-800);
                 color: #fff;
                 border-color: var(--border-default);
-            }
-
-            .stat-row {
-                display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 12px;
-            }
-
-            .stat {
-                border-radius: var(--radius-xl);
-                background: var(--bg-elevated);
-                border: 1px solid var(--border-default);
-                padding: 14px;
-            }
-
-            .stat .label {
-                margin: 0;
-                color: var(--text-muted);
-                font-size: 12px;
-                font-weight: 600;
-            }
-
-            .stat .value {
-                margin: 10px 0 0;
-                font-size: 38px;
-                line-height: 1;
-                font-family: var(--font-number);
-                color: var(--text-primary);
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .stat .accent {
-                width: 10px;
-                height: 36px;
-                border-radius: var(--radius-pill);
-                display: inline-block;
-            }
-
-            .accent.results {
-                background: var(--stat-results);
-            }
-            .accent.positive {
-                background: var(--stat-positive);
-            }
-            .accent.negative {
-                background: var(--stat-negative);
-            }
-            .accent.overrides {
-                background: var(--stat-overrides);
             }
 
             .mini-table {
@@ -806,10 +746,10 @@
 
             .icon-btn {
                 min-width: 64px;
-                height: 40px;
+                height: 44px;
                 padding: 0 12px;
                 border: 0;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-pill);
                 background: #fff;
                 color: var(--navy-600);
                 font-size: 13px;
@@ -922,7 +862,7 @@
             }
 
             .side-item {
-                border-radius: 10px;
+                border-radius: var(--radius-pill);
                 padding: 10px 12px;
                 font-size: 14px;
                 font-weight: 700;
@@ -957,10 +897,10 @@
             }
 
             .page-btn {
-                height: 40px;
-                min-width: 40px;
+                height: 44px;
+                min-width: 44px;
                 border: 0;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-pill);
                 padding: 0 10px;
                 background: var(--navy-200);
                 color: var(--navy-950);
@@ -1066,7 +1006,7 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                min-height: 40px;
+                min-height: 44px;
                 padding: 8px 14px;
                 border-radius: var(--radius-pill);
                 border: 1px solid var(--border-default);
@@ -1302,9 +1242,6 @@
                     grid-template-columns: 1fr;
                 }
 
-                .stat-row {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                }
             }
 
             @media (max-width: 700px) {
@@ -1327,9 +1264,6 @@
                     width: 100%;
                 }
 
-                .stat-row {
-                    grid-template-columns: 1fr;
-                }
             }
         </style>
     </head>
@@ -1355,7 +1289,7 @@
                 <h2>Implementation Rules</h2>
                 <p>
                     Use these semantic tokens exactly. Build all screens with
-                    50px controls, rounded cards, navy-based neutrals, pink
+                    44px controls, rounded cards, navy-based neutrals, pink
                     primary actions, cyan informational accents, and state
                     colors shown below. This is the closest match to Smart Lists
                     and the current Industry Engine product UI.
@@ -2002,7 +1936,6 @@
                             <button class="btn primary">Primary</button>
                             <button class="btn neutral">Neutral</button>
                             <button class="btn success">Success</button>
-                            <button class="btn warning">Warning</button>
                             <button class="btn danger">Danger</button>
                             <button class="btn neutral" disabled>
                                 Disabled
@@ -2058,36 +1991,6 @@
                             <button class="page-btn">...</button>
                             <button class="page-btn">9809</button>
                             <button class="page-btn">›</button>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <h4>Stat Cards</h4>
-                        <div class="stat-row">
-                            <article class="stat">
-                                <p class="label">Results</p>
-                                <p class="value">
-                                    <span class="accent results"></span>980
-                                </p>
-                            </article>
-                            <article class="stat">
-                                <p class="label">Positive training</p>
-                                <p class="value">
-                                    <span class="accent positive"></span>6
-                                </p>
-                            </article>
-                            <article class="stat">
-                                <p class="label">Negative training</p>
-                                <p class="value">
-                                    <span class="accent negative"></span>2
-                                </p>
-                            </article>
-                            <article class="stat">
-                                <p class="label">Overrides</p>
-                                <p class="value">
-                                    <span class="accent overrides"></span>-
-                                </p>
-                            </article>
                         </div>
                     </div>
 
@@ -2195,7 +2098,7 @@
                     <tbody>
                         <tr>
                             <td>Control height</td>
-                            <td><code>50px</code></td>
+                            <td><code>44px</code></td>
                             <td>
                                 Buttons, search, dropdown triggers, segmented
                                 toggles
