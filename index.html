@@ -294,13 +294,15 @@
 
             .intro h2 {
                 margin: 0 0 var(--space-2);
-                font-size: 22px;
+                font-size: 20px;
+                font-weight: 600;
             }
 
             .intro p {
                 margin: 0;
                 color: var(--text-secondary);
                 max-width: 100ch;
+                font-size: 14px;
             }
 
             .grid {
@@ -1051,15 +1053,15 @@
 
             .asset-groups {
                 display: grid;
-                gap: var(--space-6);
-                margin-top: var(--space-6);
+                gap: 0;
+                margin-top: var(--space-4);
             }
 
             .asset-group {
                 border: 0;
                 border-top: 1px solid var(--border-default);
                 border-radius: 0;
-                padding: var(--space-5) 0;
+                padding: var(--space-3) 0;
                 background: none;
             }
 
@@ -1079,6 +1081,7 @@
             .asset-group h4 {
                 margin: 0;
                 font-size: 18px;
+                font-weight: 600;
             }
 
             .asset-group p {
@@ -1268,8 +1271,9 @@
             }
 
             .asset-download {
-                min-width: 116px;
+                min-width: 0;
                 white-space: nowrap;
+                padding: 0 12px;
             }
 
             .asset-card.compact .asset-meta {
@@ -1537,18 +1541,31 @@
                                 <td><code>11-12px</code> uppercase tracking</td>
                                 <td>Table headers, chips, metadata</td>
                             </tr>
-                            <tr>
-                                <td>Font weights</td>
-                                <td><code>400 / 500 / 600 / 700</code></td>
-                                <td>Regular (body), Medium (labels), SemiBold (buttons/headings), Bold (brand/headers)</td>
-                            </tr>
                         </tbody>
                     </table>
                     <hr class="hr" />
-                    <p class="kpi">980</p>
+                    <p class="sub"><strong>Font Weight Samples</strong></p>
+                    <div style="display: grid; gap: 8px; font-size: 16px">
+                        <div><span style="font-weight: 400">Regular 400</span> — body text, descriptions</div>
+                        <div><span style="font-weight: 500">Medium 500</span> — labels, table heads</div>
+                        <div><span style="font-weight: 600">SemiBold 600</span> — buttons, headings, badges</div>
+                        <div><span style="font-weight: 700">Bold 700</span> — brand title, page headers</div>
+                    </div>
+                    <hr class="hr" />
+                    <p class="kpi">£2.3M</p>
                     <p class="kpi-sub">
-                        Example KPI using <code>Rubik-Numbers</code>
+                        KPI using <code>Rubik-Numbers</code>
                     </p>
+                    <hr class="hr" />
+                    <p class="sub"><strong>Download Fonts</strong></p>
+                    <div class="stack" style="margin-top: 8px">
+                        <a class="btn primary" href="#" id="downloadAllFonts">Download All Fonts</a>
+                        <a class="btn neutral" href="fonts/Poppins-Regular.ttf" download>Poppins Regular</a>
+                        <a class="btn neutral" href="fonts/Poppins-Medium.ttf" download>Poppins Medium</a>
+                        <a class="btn neutral" href="fonts/Poppins-SemiBold.ttf" download>Poppins SemiBold</a>
+                        <a class="btn neutral" href="fonts/Poppins-Bold.ttf" download>Poppins Bold</a>
+                        <a class="btn neutral" href="fonts/Rubik-Regular.ttf" download>Rubik Numbers</a>
+                    </div>
                 </section>
             </div>
 
@@ -2599,7 +2616,7 @@
                     toggleBtn.className = 'asset-group-toggle';
                     toggleBtn.type = 'button';
 
-                    if (index >= 3) {
+                    if (index >= 2) {
                         wrapper.classList.add('collapsed');
                         wrapper.style.maxHeight = '0';
                         toggleBtn.textContent = 'Show';
@@ -2661,6 +2678,25 @@
                             : "dark";
                     setTheme(next);
                 });
+
+                var dlAllFonts = document.getElementById("downloadAllFonts");
+                if (dlAllFonts) {
+                    dlAllFonts.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        var fonts = [
+                            "fonts/Poppins-Regular.ttf",
+                            "fonts/Poppins-Medium.ttf",
+                            "fonts/Poppins-SemiBold.ttf",
+                            "fonts/Poppins-Bold.ttf",
+                            "fonts/Rubik-Regular.ttf"
+                        ];
+                        fonts.forEach(function (f, i) {
+                            setTimeout(function () {
+                                forceDownload(f, f.split("/").pop());
+                            }, i * 300);
+                        });
+                    });
+                }
             })();
         </script>
     </body>
