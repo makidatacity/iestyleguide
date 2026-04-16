@@ -464,7 +464,7 @@
                 align-items: center;
                 justify-content: center;
                 height: 36px;
-                padding: 0 16px;
+                padding: 0 16px !important;
                 border: 0;
                 border-radius: 0.75rem;
                 font-family: var(--font-sans);
@@ -552,8 +552,8 @@
                 font-family: var(--font-sans);
                 font-size: 13px;
                 padding: 0 14px;
-                transition:
-                    background var(--duration-fast) var(--easing-standard);
+                transition: background var(--duration-fast)
+                    var(--easing-standard);
             }
 
             .input::placeholder {
@@ -614,7 +614,9 @@
                 font-weight: 600;
                 font-size: 13px;
                 cursor: pointer;
-                transition: background var(--duration-fast) var(--easing-standard), color var(--duration-fast) var(--easing-standard);
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    color var(--duration-fast) var(--easing-standard);
             }
 
             .tab.active {
@@ -686,11 +688,21 @@
                 background: var(--bg-surface);
                 color: var(--text-muted);
                 cursor: pointer;
-                transition: background var(--duration-fast) var(--easing-standard), color var(--duration-fast) var(--easing-standard);
+                transition:
+                    background var(--duration-fast) var(--easing-standard),
+                    color var(--duration-fast) var(--easing-standard);
             }
-            .action-btn:hover { background: var(--bg-surface-hover); }
-            .action-btn svg { width: 18px; height: 18px; }
-            [data-theme="dark"] .action-btn { background: var(--bg-surface); color: var(--text-muted); }
+            .action-btn:hover {
+                background: var(--bg-surface-hover);
+            }
+            .action-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            [data-theme="dark"] .action-btn {
+                background: var(--bg-surface);
+                color: var(--text-muted);
+            }
 
             .score-badge {
                 display: inline-flex;
@@ -1173,8 +1185,8 @@
                             -45deg,
                             transparent 75%,
                             rgba(13, 6, 42, 0.03) 75%
-                        )
-                        -8px 0 / 16px 16px;
+                        ) -8px
+                        0 / 16px 16px;
             }
 
             .asset-preview.surface-soft {
@@ -1326,7 +1338,8 @@
                 font-size: 11px;
                 font-weight: 600;
                 cursor: pointer;
-                transition: background var(--duration-fast) var(--easing-standard);
+                transition: background var(--duration-fast)
+                    var(--easing-standard);
             }
             .asset-group-toggle:hover {
                 background: var(--bg-surface-hover);
@@ -1369,7 +1382,6 @@
                 .asset-download {
                     width: 100%;
                 }
-
             }
         </style>
     </head>
@@ -1395,10 +1407,10 @@
                 <h2>Implementation Rules</h2>
                 <p>
                     Use these semantic tokens exactly. Build all screens with
-                    36px controls, 12px radius interactive elements, navy-based neutrals, pink
-                    primary actions, cyan informational accents, and state
-                    colors shown below. This is the closest match to Smart Lists
-                    and the current Industry Engine product UI.
+                    36px controls, 12px radius interactive elements, navy-based
+                    neutrals, pink primary actions, cyan informational accents,
+                    and state colors shown below. This is the closest match to
+                    Smart Lists and the current Industry Engine product UI.
                 </p>
             </section>
 
@@ -1412,7 +1424,9 @@
                         </p>
                     </div>
                     <div class="asset-actions">
-                        <span id="assetCount" class="asset-badge">0 assets</span>
+                        <span id="assetCount" class="asset-badge"
+                            >0 assets</span
+                        >
                         <a
                             id="downloadAllAssets"
                             class="btn primary"
@@ -1513,7 +1527,9 @@
                         <tbody>
                             <tr>
                                 <td>UI font</td>
-                                <td><code>Poppins 400 / 500 / 600 / 700</code></td>
+                                <td>
+                                    <code>Poppins 400 / 500 / 600 / 700</code>
+                                </td>
                                 <td>All labels, paragraphs, nav, buttons</td>
                             </tr>
                             <tr>
@@ -1546,25 +1562,62 @@
                     <hr class="hr" />
                     <p class="sub"><strong>Font Weight Samples</strong></p>
                     <div style="display: grid; gap: 8px; font-size: 16px">
-                        <div><span style="font-weight: 400">Regular 400</span> — body text, descriptions</div>
-                        <div><span style="font-weight: 500">Medium 500</span> — labels, table heads</div>
-                        <div><span style="font-weight: 600">SemiBold 600</span> — buttons, headings, badges</div>
-                        <div><span style="font-weight: 700">Bold 700</span> — brand title, page headers</div>
+                        <div>
+                            <span style="font-weight: 400">Regular 400</span> —
+                            body text, descriptions
+                        </div>
+                        <div>
+                            <span style="font-weight: 500">Medium 500</span> —
+                            labels, table heads
+                        </div>
+                        <div>
+                            <span style="font-weight: 600">SemiBold 600</span> —
+                            buttons, headings, badges
+                        </div>
+                        <div>
+                            <span style="font-weight: 700">Bold 700</span> —
+                            brand title, page headers
+                        </div>
                     </div>
                     <hr class="hr" />
                     <p class="kpi">£2.3M</p>
-                    <p class="kpi-sub">
-                        KPI using <code>Rubik-Numbers</code>
-                    </p>
+                    <p class="kpi-sub">KPI using <code>Rubik-Numbers</code></p>
                     <hr class="hr" />
                     <p class="sub"><strong>Download Fonts</strong></p>
                     <div class="stack" style="margin-top: 8px">
-                        <a class="btn primary" href="#" id="downloadAllFonts">Download All Fonts</a>
-                        <a class="btn neutral" href="fonts/Poppins-Regular.ttf" download>Poppins Regular</a>
-                        <a class="btn neutral" href="fonts/Poppins-Medium.ttf" download>Poppins Medium</a>
-                        <a class="btn neutral" href="fonts/Poppins-SemiBold.ttf" download>Poppins SemiBold</a>
-                        <a class="btn neutral" href="fonts/Poppins-Bold.ttf" download>Poppins Bold</a>
-                        <a class="btn neutral" href="fonts/Rubik-Regular.ttf" download>Rubik Numbers</a>
+                        <a class="btn primary" href="#" id="downloadAllFonts"
+                            >Download All Fonts</a
+                        >
+                        <a
+                            class="btn neutral"
+                            href="fonts/Poppins-Regular.ttf"
+                            download
+                            >Poppins Regular</a
+                        >
+                        <a
+                            class="btn neutral"
+                            href="fonts/Poppins-Medium.ttf"
+                            download
+                            >Poppins Medium</a
+                        >
+                        <a
+                            class="btn neutral"
+                            href="fonts/Poppins-SemiBold.ttf"
+                            download
+                            >Poppins SemiBold</a
+                        >
+                        <a
+                            class="btn neutral"
+                            href="fonts/Poppins-Bold.ttf"
+                            download
+                            >Poppins Bold</a
+                        >
+                        <a
+                            class="btn neutral"
+                            href="fonts/Rubik-Regular.ttf"
+                            download
+                            >Rubik Numbers</a
+                        >
                     </div>
                 </section>
             </div>
@@ -1577,16 +1630,34 @@
                         <p class="sub"><strong>Brand</strong></p>
                         <div class="swatch-grid">
                             <div class="swatch">
-                                <div class="chip" style="background: #d10956"></div>
-                                <div class="meta"><p class="token">Pink</p><p class="hex">#d10956</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #d10956"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">Pink</p>
+                                    <p class="hex">#d10956</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #02b1d0"></div>
-                                <div class="meta"><p class="token">Cyan</p><p class="hex">#02b1d0</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #02b1d0"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">Cyan</p>
+                                    <p class="hex">#02b1d0</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #0d062a"></div>
-                                <div class="meta"><p class="token">Navy</p><p class="hex">#0d062a</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #0d062a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">Navy</p>
+                                    <p class="hex">#0d062a</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1594,40 +1665,88 @@
                         <p class="sub"><strong>Surfaces — Light</strong></p>
                         <div class="swatch-grid">
                             <div class="swatch">
-                                <div class="chip" style="background: #f8f8fc"></div>
-                                <div class="meta"><p class="token">bg-base</p><p class="hex">#f8f8fc</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #f8f8fc"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-base</p>
+                                    <p class="hex">#f8f8fc</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #f2f2f8"></div>
-                                <div class="meta"><p class="token">bg-elevated</p><p class="hex">#f2f2f8</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #f2f2f8"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-elevated</p>
+                                    <p class="hex">#f2f2f8</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #e4e4ed"></div>
-                                <div class="meta"><p class="token">bg-surface</p><p class="hex">#e4e4ed</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #e4e4ed"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-surface</p>
+                                    <p class="hex">#e4e4ed</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #cfcfde"></div>
-                                <div class="meta"><p class="token">bg-surface-hover</p><p class="hex">#cfcfde</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #cfcfde"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-surface-hover</p>
+                                    <p class="hex">#cfcfde</p>
+                                </div>
                             </div>
                         </div>
                         <div style="height: 16px"></div>
                         <p class="sub"><strong>Surfaces — Dark</strong></p>
                         <div class="swatch-grid">
                             <div class="swatch">
-                                <div class="chip" style="background: #0d062a"></div>
-                                <div class="meta"><p class="token">bg-base</p><p class="hex">#0d062a</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #0d062a"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-base</p>
+                                    <p class="hex">#0d062a</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #26263d"></div>
-                                <div class="meta"><p class="token">bg-elevated</p><p class="hex">#26263d</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #26263d"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-elevated</p>
+                                    <p class="hex">#26263d</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #313148"></div>
-                                <div class="meta"><p class="token">bg-surface</p><p class="hex">#313148</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #313148"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-surface</p>
+                                    <p class="hex">#313148</p>
+                                </div>
                             </div>
                             <div class="swatch">
-                                <div class="chip" style="background: #3b3b54"></div>
-                                <div class="meta"><p class="token">bg-surface-hover</p><p class="hex">#3b3b54</p></div>
+                                <div
+                                    class="chip"
+                                    style="background: #3b3b54"
+                                ></div>
+                                <div class="meta">
+                                    <p class="token">bg-surface-hover</p>
+                                    <p class="hex">#3b3b54</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1636,96 +1755,312 @@
 
             <section class="panel section-gap">
                 <h3>Surface Tones</h3>
-                <p class="sub">Layout depth patterns used in the product. Both light and dark shown simultaneously.</p>
+                <p class="sub">
+                    Layout depth patterns used in the product. Both light and
+                    dark shown simultaneously.
+                </p>
 
-                <p class="sub" style="margin-top: var(--space-4)"><strong>Two-Tone — Current Product Style</strong></p>
-                <p class="sub">Sidebar background + plain body background. No card containers. Content rows separated by borders.</p>
+                <p class="sub" style="margin-top: var(--space-4)">
+                    <strong>Two-Tone — Current Product Style</strong>
+                </p>
+                <p class="sub">
+                    Sidebar background + plain body background. No card
+                    containers. Content rows separated by borders.
+                </p>
                 <div class="tone-pair">
-                    <div class="tone-demo" data-theme="light" style="color-scheme: light">
-                        <div class="tone-sidebar" style="background: #f2f2f8; color: #0d062a">
+                    <div
+                        class="tone-demo"
+                        data-theme="light"
+                        style="color-scheme: light"
+                    >
+                        <div
+                            class="tone-sidebar"
+                            style="background: #f2f2f8; color: #0d062a"
+                        >
                             <p class="tone-label">Sidebar · bg-elevated</p>
                             <p class="tone-hex">#f2f2f8</p>
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; margin-top: 8px">
-                                <div class="tone-nav-item" style="background: #3b3b54; color: #fff">Smart Lists</div>
-                                <div class="tone-nav-item" style="color: #3b3b54">Explore</div>
-                                <div class="tone-nav-item" style="color: #3b3b54">Compare</div>
+                            <div
+                                style="
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    margin-top: 8px;
+                                "
+                            >
+                                <div
+                                    class="tone-nav-item"
+                                    style="background: #3b3b54; color: #fff"
+                                >
+                                    Smart Lists
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #3b3b54"
+                                >
+                                    Explore
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #3b3b54"
+                                >
+                                    Compare
+                                </div>
                             </div>
                         </div>
-                        <div class="tone-content" style="background: #f8f8fc; color: #0d062a">
+                        <div
+                            class="tone-content"
+                            style="background: #f8f8fc; color: #0d062a"
+                        >
                             <p class="tone-label">Content · bg-base</p>
                             <p class="tone-hex">#f8f8fc</p>
-                            <div class="tone-row" style="border-color: #e4e4ed">Company Alpha</div>
-                            <div class="tone-row" style="border-color: #e4e4ed">Company Beta</div>
-                            <div class="tone-row" style="border-color: #e4e4ed">Company Gamma</div>
-                        </div>
-                    </div>
-                    <div class="tone-demo" data-theme="dark" style="color-scheme: dark">
-                        <div class="tone-sidebar" style="background: #26263d; color: #ffffff">
-                            <p class="tone-label" style="color: #e4e4ed">Sidebar · bg-elevated</p>
-                            <p class="tone-hex" style="color: #cfcfde">#26263d</p>
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; margin-top: 8px">
-                                <div class="tone-nav-item" style="background: #50506a; color: #fff">Smart Lists</div>
-                                <div class="tone-nav-item" style="color: #e4e4ed">Explore</div>
-                                <div class="tone-nav-item" style="color: #e4e4ed">Compare</div>
+                            <div class="tone-row" style="border-color: #e4e4ed">
+                                Company Alpha
+                            </div>
+                            <div class="tone-row" style="border-color: #e4e4ed">
+                                Company Beta
+                            </div>
+                            <div class="tone-row" style="border-color: #e4e4ed">
+                                Company Gamma
                             </div>
                         </div>
-                        <div class="tone-content" style="background: #0d062a; color: #ffffff">
-                            <p class="tone-label" style="color: #e4e4ed">Content · bg-base</p>
-                            <p class="tone-hex" style="color: #cfcfde">#0d062a</p>
-                            <div class="tone-row" style="border-color: #3b3b54; color: #e4e4ed">Company Alpha</div>
-                            <div class="tone-row" style="border-color: #3b3b54; color: #e4e4ed">Company Beta</div>
-                            <div class="tone-row" style="border-color: #3b3b54; color: #e4e4ed">Company Gamma</div>
+                    </div>
+                    <div
+                        class="tone-demo"
+                        data-theme="dark"
+                        style="color-scheme: dark"
+                    >
+                        <div
+                            class="tone-sidebar"
+                            style="background: #26263d; color: #ffffff"
+                        >
+                            <p class="tone-label" style="color: #e4e4ed">
+                                Sidebar · bg-elevated
+                            </p>
+                            <p class="tone-hex" style="color: #cfcfde">
+                                #26263d
+                            </p>
+                            <div
+                                style="
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    margin-top: 8px;
+                                "
+                            >
+                                <div
+                                    class="tone-nav-item"
+                                    style="background: #50506a; color: #fff"
+                                >
+                                    Smart Lists
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #e4e4ed"
+                                >
+                                    Explore
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #e4e4ed"
+                                >
+                                    Compare
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="tone-content"
+                            style="background: #0d062a; color: #ffffff"
+                        >
+                            <p class="tone-label" style="color: #e4e4ed">
+                                Content · bg-base
+                            </p>
+                            <p class="tone-hex" style="color: #cfcfde">
+                                #0d062a
+                            </p>
+                            <div
+                                class="tone-row"
+                                style="border-color: #3b3b54; color: #e4e4ed"
+                            >
+                                Company Alpha
+                            </div>
+                            <div
+                                class="tone-row"
+                                style="border-color: #3b3b54; color: #e4e4ed"
+                            >
+                                Company Beta
+                            </div>
+                            <div
+                                class="tone-row"
+                                style="border-color: #3b3b54; color: #e4e4ed"
+                            >
+                                Company Gamma
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <p class="sub" style="margin-top: var(--space-6)"><strong>Three-Tone — When Depth Needed</strong></p>
-                <p class="sub">Adds a third surface for table headers, filter bars, or inset panels.</p>
+                <p class="sub" style="margin-top: var(--space-6)">
+                    <strong>Three-Tone — When Depth Needed</strong>
+                </p>
+                <p class="sub">
+                    Adds a third surface for table headers, filter bars, or
+                    inset panels.
+                </p>
                 <div class="tone-pair">
-                    <div class="tone-demo" data-theme="light" style="color-scheme: light">
-                        <div class="tone-sidebar" style="background: #f2f2f8; color: #0d062a">
+                    <div
+                        class="tone-demo"
+                        data-theme="light"
+                        style="color-scheme: light"
+                    >
+                        <div
+                            class="tone-sidebar"
+                            style="background: #f2f2f8; color: #0d062a"
+                        >
                             <p class="tone-label">Sidebar</p>
                             <p class="tone-hex">#f2f2f8</p>
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; margin-top: 8px">
-                                <div class="tone-nav-item" style="background: #3b3b54; color: #fff">Results</div>
-                                <div class="tone-nav-item" style="color: #3b3b54">Training</div>
+                            <div
+                                style="
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    margin-top: 8px;
+                                "
+                            >
+                                <div
+                                    class="tone-nav-item"
+                                    style="background: #3b3b54; color: #fff"
+                                >
+                                    Results
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #3b3b54"
+                                >
+                                    Training
+                                </div>
                             </div>
                         </div>
-                        <div class="tone-content" style="background: #f8f8fc; color: #0d062a">
+                        <div
+                            class="tone-content"
+                            style="background: #f8f8fc; color: #0d062a"
+                        >
                             <p class="tone-label">Content · bg-base</p>
-                            <div class="tone-inset" style="background: #e4e4ed; margin-bottom: 8px">
-                                <p class="tone-label" style="margin: 0">Table Head · bg-surface <span style="font-weight: 400; text-transform: none; letter-spacing: normal">#e4e4ed</span></p>
+                            <div
+                                class="tone-inset"
+                                style="background: #e4e4ed; margin-bottom: 8px"
+                            >
+                                <p class="tone-label" style="margin: 0">
+                                    Table Head · bg-surface
+                                    <span
+                                        style="
+                                            font-weight: 400;
+                                            text-transform: none;
+                                            letter-spacing: normal;
+                                        "
+                                        >#e4e4ed</span
+                                    >
+                                </p>
                             </div>
-                            <div class="tone-row" style="border-color: #e4e4ed">Row on bg-base</div>
-                            <div class="tone-row" style="border-color: #e4e4ed">Row on bg-base</div>
+                            <div class="tone-row" style="border-color: #e4e4ed">
+                                Row on bg-base
+                            </div>
+                            <div class="tone-row" style="border-color: #e4e4ed">
+                                Row on bg-base
+                            </div>
                         </div>
                     </div>
-                    <div class="tone-demo" data-theme="dark" style="color-scheme: dark">
-                        <div class="tone-sidebar" style="background: #26263d; color: #ffffff">
-                            <p class="tone-label" style="color: #e4e4ed">Sidebar</p>
-                            <p class="tone-hex" style="color: #cfcfde">#26263d</p>
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; margin-top: 8px">
-                                <div class="tone-nav-item" style="background: #50506a; color: #fff">Results</div>
-                                <div class="tone-nav-item" style="color: #e4e4ed">Training</div>
+                    <div
+                        class="tone-demo"
+                        data-theme="dark"
+                        style="color-scheme: dark"
+                    >
+                        <div
+                            class="tone-sidebar"
+                            style="background: #26263d; color: #ffffff"
+                        >
+                            <p class="tone-label" style="color: #e4e4ed">
+                                Sidebar
+                            </p>
+                            <p class="tone-hex" style="color: #cfcfde">
+                                #26263d
+                            </p>
+                            <div
+                                style="
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 4px;
+                                    margin-top: 8px;
+                                "
+                            >
+                                <div
+                                    class="tone-nav-item"
+                                    style="background: #50506a; color: #fff"
+                                >
+                                    Results
+                                </div>
+                                <div
+                                    class="tone-nav-item"
+                                    style="color: #e4e4ed"
+                                >
+                                    Training
+                                </div>
                             </div>
                         </div>
-                        <div class="tone-content" style="background: #0d062a; color: #ffffff">
-                            <p class="tone-label" style="color: #e4e4ed">Content · bg-base</p>
-                            <div class="tone-inset" style="background: #313148; margin-bottom: 8px">
-                                <p class="tone-label" style="margin: 0; color: #e4e4ed">Table Head · bg-surface <span style="font-weight: 400; text-transform: none; letter-spacing: normal; color: #cfcfde">#313148</span></p>
+                        <div
+                            class="tone-content"
+                            style="background: #0d062a; color: #ffffff"
+                        >
+                            <p class="tone-label" style="color: #e4e4ed">
+                                Content · bg-base
+                            </p>
+                            <div
+                                class="tone-inset"
+                                style="background: #313148; margin-bottom: 8px"
+                            >
+                                <p
+                                    class="tone-label"
+                                    style="margin: 0; color: #e4e4ed"
+                                >
+                                    Table Head · bg-surface
+                                    <span
+                                        style="
+                                            font-weight: 400;
+                                            text-transform: none;
+                                            letter-spacing: normal;
+                                            color: #cfcfde;
+                                        "
+                                        >#313148</span
+                                    >
+                                </p>
                             </div>
-                            <div class="tone-row" style="border-color: #3b3b54; color: #e4e4ed">Row on bg-base</div>
-                            <div class="tone-row" style="border-color: #3b3b54; color: #e4e4ed">Row on bg-base</div>
+                            <div
+                                class="tone-row"
+                                style="border-color: #3b3b54; color: #e4e4ed"
+                            >
+                                Row on bg-base
+                            </div>
+                            <div
+                                class="tone-row"
+                                style="border-color: #3b3b54; color: #e4e4ed"
+                            >
+                                Row on bg-base
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="section-gap">
-                <h3 style="font-weight: 600; font-size: 20px; margin: 0 0 4px">Semantic Tokens and Usage</h3>
+                <h3 style="font-weight: 600; font-size: 20px; margin: 0 0 4px">
+                    Semantic Tokens and Usage
+                </h3>
                 <p class="sub">
-                    These are the core tokens to implement first. All
-                    components should reference these, not random hex values.
+                    These are the core tokens to implement first. All components
+                    should reference these, not random hex values.
                 </p>
                 <table class="table">
                     <thead>
@@ -1838,8 +2173,14 @@
             </section>
 
             <section class="section-gap" style="padding: var(--space-6) 0">
-                <h3 style="font-weight: 600; font-size: 20px; margin: 0 0 4px">Flat Content (No Card)</h3>
-                <p class="sub">Content sections can sit directly on bg-base without a panel container. Use this for primary content areas like result lists, tables, and page bodies.</p>
+                <h3 style="font-weight: 600; font-size: 20px; margin: 0 0 4px">
+                    Flat Content (No Card)
+                </h3>
+                <p class="sub">
+                    Content sections can sit directly on bg-base without a panel
+                    container. Use this for primary content areas like result
+                    lists, tables, and page bodies.
+                </p>
             </section>
 
             <section class="panel section-gap">
@@ -1884,7 +2225,6 @@
                                     placeholder="Search collections..."
                                 />
                             </label>
-
                         </div>
                     </div>
 
@@ -1926,15 +2266,57 @@
 
                     <div class="demo">
                         <h4>Highlight Card</h4>
-                        <div class="highlight-card" style="background: #3a3546; color: #fff">
-                            <div style="width: 32px; height: 32px; border-radius: var(--radius-md); background: linear-gradient(180deg, #02b1d0, #d10956); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0">L1</div>
+                        <div
+                            class="highlight-card"
+                            style="background: #3a3546; color: #fff"
+                        >
+                            <div
+                                style="
+                                    width: 32px;
+                                    height: 32px;
+                                    border-radius: var(--radius-md);
+                                    background: linear-gradient(
+                                        180deg,
+                                        #02b1d0,
+                                        #d10956
+                                    );
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 700;
+                                    font-size: 13px;
+                                    flex-shrink: 0;
+                                "
+                            >
+                                L1
+                            </div>
                             <div>
-                                <strong style="font-size: 14px">LANNIS LIMITED</strong>
-                                <p style="margin: 2px 0 0; font-size: 12px; opacity: 0.7">Currently viewing</p>
+                                <strong style="font-size: 14px"
+                                    >LANNIS LIMITED</strong
+                                >
+                                <p
+                                    style="
+                                        margin: 2px 0 0;
+                                        font-size: 12px;
+                                        opacity: 0.7;
+                                    "
+                                >
+                                    Currently viewing
+                                </p>
                             </div>
                         </div>
                         <div style="height: 10px"></div>
-                        <p style="font-size: 12px; color: var(--text-muted); margin: 0">Dark navy highlight for active/current items. Uses <code>#3A3546</code> light, <code>#8881A0</code> dark.</p>
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--text-muted);
+                                margin: 0;
+                            "
+                        >
+                            Dark navy highlight for active/current items. Uses
+                            <code>#3A3546</code> light,
+                            <code>#8881A0</code> dark.
+                        </p>
                     </div>
 
                     <div class="demo" style="grid-column: 1 / -1">
@@ -1947,24 +2329,97 @@
                                 <div>Actions</div>
                             </div>
                             <div class="mini-row">
-                                <div style="display: flex; align-items: flex-start; gap: 12px">
+                                <div
+                                    style="
+                                        display: flex;
+                                        align-items: flex-start;
+                                        gap: 12px;
+                                    "
+                                >
                                     <div class="avatar-fallback">P</div>
                                     <div>
-                                        <strong style="font-size: 14px; font-weight: 600">PARABELLUM SECURITY SERVICES LTD</strong>
-                                        <p style="margin: 2px 0 0; font-size: 12px; color: var(--text-secondary); line-height: 1.4">Plus security are a uk based security company with offices in manchester...</p>
-                                        <p style="margin: 2px 0 0; font-size: 12px; color: var(--text-muted)">parabellumsecurity.org</p>
+                                        <strong
+                                            style="
+                                                font-size: 14px;
+                                                font-weight: 600;
+                                            "
+                                            >PARABELLUM SECURITY SERVICES
+                                            LTD</strong
+                                        >
+                                        <p
+                                            style="
+                                                margin: 2px 0 0;
+                                                font-size: 12px;
+                                                color: var(--text-secondary);
+                                                line-height: 1.4;
+                                            "
+                                        >
+                                            Plus security are a uk based
+                                            security company with offices in
+                                            manchester...
+                                        </p>
+                                        <p
+                                            style="
+                                                margin: 2px 0 0;
+                                                font-size: 12px;
+                                                color: var(--text-muted);
+                                            "
+                                        >
+                                            parabellumsecurity.org
+                                        </p>
                                         <div class="class-row">
-                                            <span class="class-label">SICs:</span>
+                                            <span class="class-label"
+                                                >SICs:</span
+                                            >
                                             <div class="class-tags">
-                                                <span class="class-tag"><span class="class-dot" style="background: #8b5cf6"></span>Other information technology service activities</span>
-                                                <span class="class-tag"><span class="class-dot" style="background: #8b5cf6"></span>Private security activities</span>
+                                                <span class="class-tag"
+                                                    ><span
+                                                        class="class-dot"
+                                                        style="
+                                                            background: #8b5cf6;
+                                                        "
+                                                    ></span
+                                                    >Other information
+                                                    technology service
+                                                    activities</span
+                                                >
+                                                <span class="class-tag"
+                                                    ><span
+                                                        class="class-dot"
+                                                        style="
+                                                            background: #8b5cf6;
+                                                        "
+                                                    ></span
+                                                    >Private security
+                                                    activities</span
+                                                >
                                             </div>
                                         </div>
                                         <div class="class-row">
-                                            <span class="class-label">RSICs:</span>
+                                            <span class="class-label"
+                                                >RSICs:</span
+                                            >
                                             <div class="class-tags">
-                                                <span class="class-tag"><span class="class-dot" style="background: #3b82f6"></span>Private security activities</span>
-                                                <span class="class-tag"><span class="class-dot" style="background: #3b82f6"></span>Security systems service activities</span>
+                                                <span class="class-tag"
+                                                    ><span
+                                                        class="class-dot"
+                                                        style="
+                                                            background: #3b82f6;
+                                                        "
+                                                    ></span
+                                                    >Private security
+                                                    activities</span
+                                                >
+                                                <span class="class-tag"
+                                                    ><span
+                                                        class="class-dot"
+                                                        style="
+                                                            background: #3b82f6;
+                                                        "
+                                                    ></span
+                                                    >Security systems service
+                                                    activities</span
+                                                >
                                             </div>
                                         </div>
                                     </div>
@@ -1975,16 +2430,80 @@
                                         <span class="score-value">7.79</span>
                                     </div>
                                 </div>
-                                <div style="font-family: var(--font-number); font-weight: 600; font-size: 14px">£2.3M</div>
-                                <div class="stack" style="justify-content: flex-end; gap: 6px">
-                                    <button class="action-btn" aria-label="Like" title="Like">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                                <div
+                                    style="
+                                        font-family: var(--font-number);
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                    "
+                                >
+                                    £2.3M
+                                </div>
+                                <div
+                                    class="stack"
+                                    style="justify-content: flex-end; gap: 6px"
+                                >
+                                    <button
+                                        class="action-btn"
+                                        aria-label="Like"
+                                        title="Like"
+                                    >
+                                        <svg
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <path d="M7 10v12" />
+                                            <path
+                                                d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"
+                                            />
+                                        </svg>
                                     </button>
-                                    <button class="action-btn" aria-label="Dislike" title="Dislike">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z"/></svg>
+                                    <button
+                                        class="action-btn"
+                                        aria-label="Dislike"
+                                        title="Dislike"
+                                    >
+                                        <svg
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <path d="M17 14V2" />
+                                            <path
+                                                d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z"
+                                            />
+                                        </svg>
                                     </button>
-                                    <button class="action-btn" aria-label="More" title="More">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                                    <button
+                                        class="action-btn"
+                                        aria-label="More"
+                                        title="More"
+                                    >
+                                        <svg
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <circle cx="12" cy="12" r="1" />
+                                            <circle cx="12" cy="5" r="1" />
+                                            <circle cx="12" cy="19" r="1" />
+                                        </svg>
                                     </button>
                                 </div>
                             </div>
@@ -2019,13 +2538,15 @@
                             <td>Radii</td>
                             <td><code>8 / 12 / 16 / pill</code></td>
                             <td>
-                                Score badges (8), buttons/inputs/tabs (12), cards
-                                (16), classification pills (9999)
+                                Score badges (8), buttons/inputs/tabs (12),
+                                cards (16), classification pills (9999)
                             </td>
                         </tr>
                         <tr>
                             <td>Focus ring</td>
-                            <td><code>box-shadow: 0 0 0 2px border-focus</code></td>
+                            <td>
+                                <code>box-shadow: 0 0 0 2px border-focus</code>
+                            </td>
                             <td>All interactive elements</td>
                         </tr>
                         <tr>
@@ -2051,9 +2572,7 @@
 
             <section class="panel section-gap">
                 <h3>Copy-Paste Design Tokens</h3>
-                <p class="sub">
-                    Use this token block directly in app styles.
-                </p>
+                <p class="sub">Use this token block directly in app styles.</p>
                 <pre class="code">
 :root {
   /* Brand */
@@ -2120,7 +2639,8 @@
             </section>
 
             <p class="footer-note">
-                Source alignment: Industry Engine design-tokens.css — the canonical token source. Updated April 2026.
+                Source alignment: Industry Engine design-tokens.css — the
+                canonical token source. Updated April 2026.
             </p>
         </div>
 
@@ -2130,9 +2650,8 @@
                 const button = document.getElementById("themeToggle");
                 const assetCount = document.getElementById("assetCount");
                 const assetGroupsRoot = document.getElementById("assetGroups");
-                const downloadAllAssets = document.getElementById(
-                    "downloadAllAssets"
-                );
+                const downloadAllAssets =
+                    document.getElementById("downloadAllAssets");
                 const storageKey = "industry-engine-styleguide-theme";
                 const webBrightGradientFiles = [
                     "images/icons/Web/SVG/Bright Gradient/B2B Marketing Companies.svg",
@@ -2292,7 +2811,7 @@
                         .replace(/\.svg$/i, "")
                         .replace(
                             /\s-\s(?:White|Light Gradient|Navy Gradient|Navy)$/i,
-                            ""
+                            "",
                         )
                         .trim();
                 }
@@ -2525,7 +3044,7 @@
                         const response = await fetch(file);
                         if (!response.ok) {
                             throw new Error(
-                                `Download failed with status ${response.status}`
+                                `Download failed with status ${response.status}`,
                             );
                         }
 
@@ -2551,11 +3070,10 @@
 
                     const totalAssets = assetGroups.reduce(function (
                         count,
-                        group
+                        group,
                     ) {
                         return count + group.items.length;
-                    },
-                    0);
+                    }, 0);
 
                     assetCount.textContent = `${totalAssets} assets`;
                     assetGroupsRoot.innerHTML = assetGroups
@@ -2602,64 +3120,71 @@
                 renderAssetLibrary();
 
                 // Collapse asset groups (keep first 3 expanded, rest collapsed)
-                document.querySelectorAll('.asset-group').forEach(function(group, index) {
-                    var grid = group.querySelector('.asset-grid');
-                    if (!grid) return;
-                    var wrapper = document.createElement('div');
-                    wrapper.className = 'asset-group-content';
-                    grid.parentNode.insertBefore(wrapper, grid);
-                    wrapper.appendChild(grid);
+                document
+                    .querySelectorAll(".asset-group")
+                    .forEach(function (group, index) {
+                        var grid = group.querySelector(".asset-grid");
+                        if (!grid) return;
+                        var wrapper = document.createElement("div");
+                        wrapper.className = "asset-group-content";
+                        grid.parentNode.insertBefore(wrapper, grid);
+                        wrapper.appendChild(grid);
 
-                    var head = group.querySelector('.asset-group-head');
-                    if (!head) return;
-                    var toggleBtn = document.createElement('button');
-                    toggleBtn.className = 'asset-group-toggle';
-                    toggleBtn.type = 'button';
+                        var head = group.querySelector(".asset-group-head");
+                        if (!head) return;
+                        var toggleBtn = document.createElement("button");
+                        toggleBtn.className = "asset-group-toggle";
+                        toggleBtn.type = "button";
 
-                    if (index >= 2) {
-                        wrapper.classList.add('collapsed');
-                        wrapper.style.maxHeight = '0';
-                        toggleBtn.textContent = 'Show';
-                    } else {
-                        wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-                        toggleBtn.textContent = 'Hide';
-                    }
-
-                    toggleBtn.addEventListener('click', function() {
-                        if (wrapper.classList.contains('collapsed')) {
-                            wrapper.classList.remove('collapsed');
-                            wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-                            toggleBtn.textContent = 'Hide';
+                        if (index >= 2) {
+                            wrapper.classList.add("collapsed");
+                            wrapper.style.maxHeight = "0";
+                            toggleBtn.textContent = "Show";
                         } else {
-                            wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-                            requestAnimationFrame(function() {
-                                wrapper.classList.add('collapsed');
-                                wrapper.style.maxHeight = '0';
-                                toggleBtn.textContent = 'Show';
-                            });
+                            wrapper.style.maxHeight =
+                                wrapper.scrollHeight + "px";
+                            toggleBtn.textContent = "Hide";
+                        }
+
+                        toggleBtn.addEventListener("click", function () {
+                            if (wrapper.classList.contains("collapsed")) {
+                                wrapper.classList.remove("collapsed");
+                                wrapper.style.maxHeight =
+                                    wrapper.scrollHeight + "px";
+                                toggleBtn.textContent = "Hide";
+                            } else {
+                                wrapper.style.maxHeight =
+                                    wrapper.scrollHeight + "px";
+                                requestAnimationFrame(function () {
+                                    wrapper.classList.add("collapsed");
+                                    wrapper.style.maxHeight = "0";
+                                    toggleBtn.textContent = "Show";
+                                });
+                            }
+                        });
+
+                        var badge = head.querySelector(".asset-badge");
+                        if (badge) {
+                            var actionsWrap = document.createElement("div");
+                            actionsWrap.style.cssText =
+                                "display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0";
+                            badge.parentNode.insertBefore(actionsWrap, badge);
+                            actionsWrap.appendChild(toggleBtn);
+                            actionsWrap.appendChild(badge);
+                        } else {
+                            head.appendChild(toggleBtn);
                         }
                     });
 
-                    var badge = head.querySelector('.asset-badge');
-                    if (badge) {
-                        var actionsWrap = document.createElement('div');
-                        actionsWrap.style.cssText = 'display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0';
-                        badge.parentNode.insertBefore(actionsWrap, badge);
-                        actionsWrap.appendChild(toggleBtn);
-                        actionsWrap.appendChild(badge);
-                    } else {
-                        head.appendChild(toggleBtn);
-                    }
-                });
-
                 assetGroupsRoot.addEventListener("click", function (event) {
-                    const downloadLink = event.target.closest(".asset-download");
+                    const downloadLink =
+                        event.target.closest(".asset-download");
                     if (!downloadLink) return;
 
                     event.preventDefault();
                     forceDownload(
                         downloadLink.dataset.file,
-                        downloadLink.dataset.filename
+                        downloadLink.dataset.filename,
                     );
                 });
 
@@ -2667,7 +3192,7 @@
                     event.preventDefault();
                     forceDownload(
                         "downloads/industry-engine-styleguide-assets.zip",
-                        "industry-engine-styleguide-assets.zip"
+                        "industry-engine-styleguide-assets.zip",
                     );
                 });
 
@@ -2688,7 +3213,7 @@
                             "fonts/Poppins-Medium.ttf",
                             "fonts/Poppins-SemiBold.ttf",
                             "fonts/Poppins-Bold.ttf",
-                            "fonts/Rubik-Regular.ttf"
+                            "fonts/Rubik-Regular.ttf",
                         ];
                         fonts.forEach(function (f, i) {
                             setTimeout(function () {
